@@ -16,3 +16,4 @@ bulk_insert_lipidmaps("../tmp/lipidmaps.sdf")
 
 #hello
 #hi
+#hi
