@@ -1,18 +1,21 @@
-print("INSTALL 2")
-
-source("R/bulkinserts/hmdb.R")
-source("R/bulkinserts/chebi.R")
-source("R/bulkinserts/lipidmaps.R")
 
 
+install<- function (filepath)
 
-bulk_insert_hmdb("../tmp/hmdb_metabolites.xml")
+{print("INSTALL 2")
+
+  source("R/bulkinserts/hmdb.R")
+  source("R/bulkinserts/chebi.R")
+  source("R/bulkinserts/lipidmaps.R")
+
+bulk_insert_hmdb(paste(filepath,"/hmdb_metabolites.xml",sep = ""))
 
 
-bulk_insert_chebi("../tmp/ChEBI_complete.sdf")
+bulk_insert_chebi(paste(filepath,"/ChEBI_complete.sdf",sep = ""))
 
 
-bulk_insert_lipidmaps("../tmp/lipidmaps.sdf")
+bulk_insert_lipidmaps(paste(filepath,"/lipidmaps.sdf",sep = ""))
+}
 
 #hello
 #hi
