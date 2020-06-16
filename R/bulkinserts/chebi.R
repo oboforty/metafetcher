@@ -49,7 +49,7 @@ bulk_insert_chebi <- function(filepath) {
   j <- 1
   state <- "something"
   start_time <- Sys.time()
-  print(sprintf("(%s) Inserting ChEBI to DB...", start_time))
+  print(sprintf("(%s) Inserting ChEBI to DB... This will take a while", start_time))
 
   repeat {
     line <- try(nextElem(it))

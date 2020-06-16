@@ -60,7 +60,7 @@ resolve_single_id <- function(start_db_tag, start_db_id) {
   df.res[[1, start_db_tag]] <- start_db_id
 
   # call the resolve algorithm
-  return(resolve(df.res))
+  return(resolve_metabolites(df.res))
 }
 
 #' Resolves missing metabolome IDs and other attributes in dataframe
@@ -69,10 +69,10 @@ resolve_single_id <- function(start_db_tag, start_db_id) {
 #' @return A list containing some statistics and the same dataframe, extended with missing data.
 #' @examples
 #' df_from_csv <- read.csv("meta_ids.csv", stringsAsFactors=FALSE)
-#' resp <- resolve(df_from_csv)
+#' resp <- resolve_metabolites(df_from_csv)
 #' df.out <- resp$df
 #' view(df.out)
-resolve <- function(df.discovered) {
+resolve_metabolites <- function(df.discovered) {
   'Discover missing IDs and attributes from a dataframe input'
 
   # transform data.frame to have lists instead of vectors

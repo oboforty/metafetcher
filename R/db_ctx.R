@@ -6,7 +6,7 @@ is_connected <- FALSE
 db.connect <- function () {
   # connect to DB
   drv <- dbDriver("PostgreSQL")
-  db_conn <<- dbConnect(drv, dbname = "metafetcher", host = "localhost", port = 5432, user = "postgres", password = "postgres")
+  db_conn <<- dbConnect(drv, dbname = "metafetcher22", host = "localhost", port = 5432, user = "postgres", password = "postgres")
   is_connected <<- TRUE
 
   return (db_conn)
