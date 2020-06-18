@@ -19,7 +19,7 @@ library(devtools)
 install_github("komorowskilab/metafetcher")
 ```
 ## Vignette 
-[For how to use the package please visit (https://komorowskilab.github.io/MetaFetcher/)]
+For how to use the package please visit (https://komorowskilab.github.io/MetaFetcher/)
 
 ## Authors
 - Rajmund Casombordi 
