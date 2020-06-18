@@ -13,7 +13,7 @@ Currently the package supports resolving IDs for the following databases:
  
  - Install postgressql on your system
  - Install devtools in R 
- -In R write 
+ - In R write 
  ```R
 library(devtools)
 install_github("komorowskilab/metafetcher")
