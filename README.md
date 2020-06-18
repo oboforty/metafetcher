@@ -1,6 +1,6 @@
 # Metafetcher
-An R package implemented to link metabolites IDs from different metabolome Databases with eachother in a step to resolve ambiguity and standardize metabolites representation and annotation.
-Currently the package supports resolving IDs for the following DataBases:
+An R package implemented to link metabolites' IDs from different Metabolome databases with eachother in a step to resolve ambiguity and standardize metabolites representation and annotation.
+Currently the package supports resolving IDs for the following databases:
   - Human Metabolome Database (HMDB)
   - Chemical Entities of Biological Interest (ChEBI)
   - PubChem
