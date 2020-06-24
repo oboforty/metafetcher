@@ -7,11 +7,11 @@ Install the dump files script first!
 
 ***discovery.csv:***
 ```csv
-hmdb_id,chebi_id,kegg_id,pubchem_id,formula,mass
-HMDB0006112,,,,,
-,8337,,,,
-HMDB0001005,,,,,
-HMDB0001008,,,,,
+hmdb_id,chebi_id,kegg_id,pubchem_id,lipidmaps_id,names,inchi,inchikey,smiles,formula,mass,monoisotopic_mass
+HMDB0006112,,,,,,,,,,,
+,8337,,,,,,,,,,
+HMDB0001005,,,,,,,,,,,
+HMDB0001008,,,,,,,,,,,
 ```
 
 ***example1.R:***
