@@ -22,6 +22,10 @@ resp <- resolve_metabolites(df.res)
 df.out <- resp$df
 ```
 
+***output:***
+The resulting *df.out* is a dataframe where the missing cell values have been extended by the program. For example, in each row the **hmdb_id** value(s) refer to the same metabolite as the value(s) in **pubchem_id**, and so on... 
+
+
 ### Resolve based on a single database ID:
 ```R
 resp <- resolve_single_id('HMDB', 'HMDB0001005')
