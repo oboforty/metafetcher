@@ -3,6 +3,7 @@
 logs/
 tmp/
 *.db
+install.RDS
 
 
 # R ignore
