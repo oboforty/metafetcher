@@ -48,7 +48,7 @@ bulk_insert_hmdb <- function(filepath) {
   remigrate_hmdb(db.connect())
   db.transaction()
 
-  print(sprintf("(%s) Inserting HMDB to DB...", start_time))
+  print(sprintf("(%s) Inserting HMDB to DB... This will take a while", start_time))
 
   # Iterative XML parsing. this iterates on each xml tag individually
   # And we store the appropriate values to our dataframe.

@@ -45,7 +45,7 @@ bulk_insert_lipidmaps <- function(filepath) {
   j <- 1
   state <- "something"
   start_time <- Sys.time()
-  print(sprintf("(%s) Inserting LipidMaps to DB...", start_time))
+  print(sprintf("(%s) Inserting LipidMaps to DB... This will take a while", start_time))
 
   repeat {
     line <- try(nextElem(it))
