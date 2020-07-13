@@ -1,16 +1,13 @@
-<<<<<<< HEAD
 #' Download HMDB,Chebi and Lipid Maps dumps to postgres metafetcher Database
 #'
 #' @param filepath path for the folder where the xml,sdf files are located
 #' @examples
 #' download("filepath")
-=======
 install_databases <- function () {
   source("R/bulkinserts/hmdb.R")
   source("R/bulkinserts/chebi.R")
   source("R/bulkinserts/lipidmaps.R")
   source("R/bulkinserts/secondaries.R")
->>>>>>> be54946fcc04231b9e389b73cc18a28e4e0c672a
 
   print("Checking Postgres install...")
 
@@ -93,8 +90,4 @@ install_databases <- function () {
   }
 }
 
-<<<<<<< HEAD
-
-=======
 install_databases()
->>>>>>> be54946fcc04231b9e389b73cc18a28e4e0c672a
