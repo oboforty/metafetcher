@@ -1,5 +1,5 @@
 dbconf <- list(
-  host = "0.0.0.0",
+  host = "172.17.0.4",
   port = 5432,
 
   dbname = "metafetcher",
