@@ -23,10 +23,10 @@ attr.refs <- names(db_handlers)
 # + metlin_id, cas_id, chemspider_id
 
 attr.meta <- c(
-    attr.refs,
-    "inchi", "inchikey", "smiles",
-    "names", "formula",
-    "mass", "monoisotopic_mass"
+  attr.refs,
+  "inchi", "inchikey", "smiles",
+  "names", "formula",
+  "mass", "monoisotopic_mass"
 )
 
 resolve.options <- list(

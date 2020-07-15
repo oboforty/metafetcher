@@ -93,8 +93,8 @@ bulk_insert_chebi <- function(filepath) {
         else if (attr == 'pubchem_id')
           if (startsWith(line, "SID:"))
             next
-          else if(startsWith(line,"CID:"))
-            line <- lstrip(line, "CID: ")
+        else if(startsWith(line,"CID:"))
+          line <- lstrip(line, "CID: ")
 
         df.chebi[[1, attr]] <- line
       }

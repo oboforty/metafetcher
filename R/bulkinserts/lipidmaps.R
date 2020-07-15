@@ -6,26 +6,26 @@ source("R/migrate.R")
 
 bulk_insert_lipidmaps <- function(filepath) {
   mapping.lipidmaps <- list(
-      'NAME' = 'names',
-      'SYSTEMATIC_NAME' = 'names',
-      'SYNONYMS' = 'names',
-      'ABBREVIATION' = 'names',
+    'NAME' = 'names',
+    'SYSTEMATIC_NAME' = 'names',
+    'SYNONYMS' = 'names',
+    'ABBREVIATION' = 'names',
 
-      'LM_ID' = 'lipidmaps_id',
-      'CATEGORY' = 'category',
-      'MAIN_CLASS' = 'main_class',
-      'SUB_CLASS' = 'sub_class',
-      'CLASS_LEVEL4' = 'lvl4_class',
-      'EXACT_MASS' = 'mass',
-      'SMILES' = 'smiles',
-      'INCHI' = 'inchi',
-      'INCHI_KEY' = 'inchikey',
-      'FORMULA' = 'formula',
-      'KEGG_ID' = 'kegg_id',
-      'HMDB_ID' = 'hmdb_id',
-      'CHEBI_ID' = 'chebi_id',
-      'PUBCHEM_CID' = 'pubchem_id',
-      'LIPIDBANK_ID' = 'lipidbank_id'
+    'LM_ID' = 'lipidmaps_id',
+    'CATEGORY' = 'category',
+    'MAIN_CLASS' = 'main_class',
+    'SUB_CLASS' = 'sub_class',
+    'CLASS_LEVEL4' = 'lvl4_class',
+    'EXACT_MASS' = 'mass',
+    'SMILES' = 'smiles',
+    'INCHI' = 'inchi',
+    'INCHI_KEY' = 'inchikey',
+    'FORMULA' = 'formula',
+    'KEGG_ID' = 'kegg_id',
+    'HMDB_ID' = 'hmdb_id',
+    'CHEBI_ID' = 'chebi_id',
+    'PUBCHEM_CID' = 'pubchem_id',
+    'LIPIDBANK_ID' = 'lipidbank_id'
   )
 
   # data frame buffer for the DB
