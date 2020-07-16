@@ -1,7 +1,7 @@
 dbconf <- list(
-  host = "localhost",
+ # host = "localhost",
  #WithDocker
-  # host = "172.17.0.2",
+   host = "172.17.0.2",
   port = 5432,
 
   dbname = "metafetcher",
@@ -16,22 +16,22 @@ fileconf <- list(
   # download link:
   # https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip
   # please unzip!!
-  hmdb_dump_file = "/Users/saryo614/metafetcher/tmp/hmdb_metabolites.xml",
+  #hmdb_dump_file = "/Users/saryo614/metafetcher/tmp/hmdb_metabolites.xml",
   #WithDocker
-  #hmdb_dump_file = "/tmp/hmdb_metabolites.xml",
+  hmdb_dump_file = "/tmp/hmdb_metabolites.xml",
 
   # download link:
   # ftp://ftp.ebi.ac.uk/pub/databases/chebi/SDF/ChEBI_complete.sdf.gz
   # please uncompress!!
-  chebi_dump_file = "/Users/saryo614/metafetcher/tmp/ChEBI_complete.sdf",
+  #chebi_dump_file = "/Users/saryo614/metafetcher/tmp/ChEBI_complete.sdf",
   #WithDocker
-  #chebi_dump_file = "/tmp/ChEBI_complete.sdf",
+  chebi_dump_file = "/tmp/ChEBI_complete.sdf",
 
   # download link:
   # https://www.lipidmaps.org/data/structure/download.php
   # please unzip!!
   # please rename the downloaded file -- if you chose to download it manually!
-  lipidmaps_dump_file = "/Users/saryo614/metafetcher/tmp/LMSD_201910002.sdf"
+  #lipidmaps_dump_file = "/Users/saryo614/metafetcher/tmp/LMSD_201910002.sdf"
   #WithDocker
- # lipidmaps_dump_file = "/tmp/lipidmaps.sdf"
+ lipidmaps_dump_file = "/tmp/LMSD_201910002.sdf"
 )
