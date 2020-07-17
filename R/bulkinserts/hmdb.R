@@ -127,6 +127,6 @@ bulk_insert_hmdb <- function(filepath) {
   db.commit()
   db.disconnect()
 
-  print(sprintf("Done inserting %s records! DT: %s", round(as.numeric(Sys.time() - start_time),2)))
+  print(sprintf("Done inserting %s records! DT: %s",state$i, round(as.numeric(Sys.time() - start_time),2)))
 }
 
