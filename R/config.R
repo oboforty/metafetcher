@@ -35,5 +35,5 @@ fileconf <- list(
   # please rename the downloaded file -- if you chose to download it manually!
   #lipidmaps_dump_file = "/Users/saryo614/metafetcher/tmp/LMSD_201910002.sdf"
   #WithDocker
- lipidmaps_dump_file = "/tmp/LMSD_201910002.sdf"
+ lipidmaps_dump_file = "/tmp/LMSD_20191002.sdf"
 )
