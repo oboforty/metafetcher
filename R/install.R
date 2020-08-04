@@ -46,7 +46,7 @@ install_databases <- function () {
 
   # STEP 1: install HMDB
   if (last_step == 1) {
-    bulk_insert_hmdb(fileconf$hmdb_dump_file)
+   # bulk_insert_hmdb(fileconf$hmdb_dump_file)
 
     last_step <- last_step + 1
     saveRDS(last_step, fn_installprog)
@@ -54,7 +54,7 @@ install_databases <- function () {
 
   # STEP 2: install CHEBI
   if (last_step == 2) {
-    bulk_insert_chebi(fileconf$chebi_dump_file)
+   # bulk_insert_chebi(fileconf$chebi_dump_file)
 
     last_step <- last_step + 1
     saveRDS(last_step, fn_installprog)
@@ -65,7 +65,7 @@ install_databases <- function () {
     bulk_insert_lipidmaps(fileconf$lipidmaps_dump_file)
 
     last_step <- last_step + 1
-    saveRDS(last_step, fn_installprog)
+     saveRDS(last_step, fn_installprog)
   }
 
   # STEP 4: install secondary tables
