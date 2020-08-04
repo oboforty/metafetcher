@@ -62,7 +62,7 @@ install_databases <- function () {
 
   # STEP 3: install Lipidmaps
   if (last_step == 3) {
-    bulk_insert_lipidmaps(fileconf$lipidmaps_dump_file)
+  #  bulk_insert_lipidmaps(fileconf$lipidmaps_dump_file)
 
     last_step <- last_step + 1
      saveRDS(last_step, fn_installprog)
