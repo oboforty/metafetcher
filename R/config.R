@@ -18,14 +18,16 @@ fileconf <- list(
   # please unzip!!
   #hmdb_dump_file = "/Users/saryo614/metafetcher/tmp/hmdb_metabolites.xml",
   #WithDocker
-  hmdb_dump_file = "/tmp/hmdb_metabolites.xml",
+ #temporarily disable
+  # hmdb_dump_file = "/tmp/hmdb_metabolites.xml",
 
   # download link:
   # ftp://ftp.ebi.ac.uk/pub/databases/chebi/SDF/ChEBI_complete.sdf.gz
   # please uncompress!!
   #chebi_dump_file = "/Users/saryo614/metafetcher/tmp/ChEBI_complete.sdf",
   #WithDocker
-  chebi_dump_file = "/tmp/ChEBI_complete.sdf",
+#temporarily disable
+  #chebi_dump_file = "/tmp/ChEBI_complete.sdf",
 
   # download link:
   # https://www.lipidmaps.org/data/structure/download.php
