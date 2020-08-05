@@ -57,6 +57,6 @@ do_consistency_test <- function (db, n) {
   print(sprintf("Missing attributes: %s (%s %%)", score_missing, round(score_missing/score_total*100)))
 }
 
-do_consistency_test("chebi", 20)
+#do_consistency_test("chebi", 20)
 
 
