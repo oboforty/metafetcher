@@ -1,5 +1,7 @@
 source("R/tests/coverage.R")
+source("R/tests/build_csv.R")
 callTest<-function()
 {
-do_consistency_test("chebi", 20)
+build_csv()
+#do_consistency_test("chebi", 20)
 }
