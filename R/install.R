@@ -85,4 +85,4 @@ install_databases <- function () {
   }
 }
 
-#install_databases()
+install_databases()
