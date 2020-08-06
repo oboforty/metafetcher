@@ -1,4 +1,4 @@
-require("RPostgreSQL")
+library("RPostgreSQL")
 source("R/config.R")
 
 mydb_conn <- NULL
