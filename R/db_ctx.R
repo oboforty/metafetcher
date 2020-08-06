@@ -46,8 +46,8 @@ print(pkg.globals$SQL)
 
 db.disconnect <- function () {
   dbDisconnect(pkg.globals$mydb_conn)
-
-  pkg.globals$localis_connected <- FALSE
+  assign("localis_connected",FALSE,envir = pkg.globals)
+ # pkg.globals$localis_connected <- FALSE
 }
 
 db.transaction <- function () {
