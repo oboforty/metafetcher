@@ -16,8 +16,8 @@ db.connect <- function (conf = NULL) {
  #e <- new.env(parent=pkg.globals)
   unlockBinding(sym="mydb_conn",env=pkg.globals)
   unlockBinding(sym="localis_connected",env=pkg.globals)
-  pkg.globals$mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
-pkg.globals$localis_connected <<- TRUE
+  mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
+localis_connected <<- TRUE
 print("Connected")
 print( pkg.globals$mydb_conn)
 print(pkg.globals$localis_connected)
