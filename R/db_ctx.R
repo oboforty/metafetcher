@@ -23,30 +23,30 @@ db.query <- function (SQL) {
     db.connect()
   }
 
-  df <- dbGetQuery(db_conn, SQL)
+  df <- dbGetQuery(mydb_conn, SQL)
   return(df)
 }
 
 db.disconnect <- function () {
-  dbDisconnect(db_conn)
+  dbDisconnect(mydb_conn)
 
   localis_connected <- FALSE
 }
 
 db.transaction <- function () {
-  dbBegin(db_conn)
+  dbBegin(mydb_conn)
 }
 
 db.commit <- function () {
-  dbCommit(db_conn)
+  dbCommit(mydb_conn)
 }
 
 db.rollback <- function () {
-  dbRollback(db_conn)
+  dbRollback(mydb_conn)
 }
 
 db.write_df <- function (table, df) {
-  dbWriteTable(db_conn, table, value = df, append = TRUE, row.names = FALSE)
+  dbWriteTable(mydb_conn, table, value = df, append = TRUE, row.names = FALSE)
 }
 
 db.create_database <- function (conf = NULL) {
