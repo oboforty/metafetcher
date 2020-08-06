@@ -2,8 +2,8 @@ library("RPostgreSQL")
 source("R/config.R")
 
 pkg.globals <- new.env()
-pkg.globals$mydb_conn <- NULL
-pkg.globals$localis_connected <- FALSE
+mydb_conn <- NULL
+localis_connected <- FALSE
 
 
 
@@ -17,12 +17,12 @@ db.connect <- function (conf = NULL) {
  #e <- new.env(parent=pkg.globals)
   unlockBinding(sym="mydb_conn",env=pkg.globals)
   unlockBinding(sym="localis_connected",env=pkg.globals)
-  pkg.globals$mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
+mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
 localis_connected <<- TRUE
 print("Connected")
-print( pkg.globals$mydb_conn)
-print(pkg.globals$localis_connected)
-  return (pkg.globals$mydb_conn)
+print( mydb_conn)
+print(localis_connected)
+  return (mydb_conn)
 }
 
 db.query <- function (SQL) {
