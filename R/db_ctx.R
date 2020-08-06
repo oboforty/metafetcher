@@ -12,7 +12,7 @@ db.connect <- function (conf = NULL) {
 
   # connect to DB
   drv <- dbDriver("PostgreSQL")
-  mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
+  mydb_conn <- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
   localis_connected <<- TRUE
 
   return (mydb_conn)
