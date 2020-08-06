@@ -2,8 +2,8 @@ library("RPostgreSQL")
 source("R/config.R")
 
 pkg.globals <- new.env()
-mydb_conn <- NULL
-localis_connected <- FALSE
+pkg.globals$mydb_conn <- NULL
+pkg.globals$localis_connected <- FALSE
 
 
 
