@@ -23,7 +23,7 @@ db.query <- function (SQL) {
     db.connect()
   }
 
-  df <- dbGetQuery(mydb_conn, SQL)
+  df <- RPostgreSQL::dbGetQuery(mydb_conn, SQL)
   return(df)
 }
 
@@ -59,7 +59,7 @@ db.create_database <- function (conf = NULL) {
   con <- dbConnect(drv, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
 
   # create database
-  dbGetQuery(con, sprintf("CREATE DATABASE %s", dbconf$dbname))
+  RPostgreSQL::dbGetQuery(con, sprintf("CREATE DATABASE %s", dbconf$dbname))
   dbCommit(con)
   dbDisconnect(con)
 }
