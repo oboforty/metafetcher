@@ -1,9 +1,9 @@
 library("RPostgreSQL")
 source("R/config.R")
 
-pkg.env <- new.env()
-mydb_conn <- NULL
-localis_connected <- FALSE
+pkg.globals <- new.env()
+pkg.globals$mydb_conn <- NULL
+pkg.globals$localis_connected <- FALSE
 
 
 db.connect <- function (conf = NULL) {
@@ -13,44 +13,44 @@ db.connect <- function (conf = NULL) {
 
   # connect to DB
   drv <- dbDriver("PostgreSQL")
-  mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
-  localis_connected <<- TRUE
+  pkg.globals$mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
+  pkg.globals$localis_connected <<- TRUE
 
-  return (mydb_conn)
+  return (pkg.globals$mydb_conn)
 }
 
 db.query <- function (SQL) {
-  if (!localis_connected) {
+  if (!pkg.globals$localis_connected) {
     db.connect()
     print(" I am here")
   }
 print("Value of db.connect")
-print(mydb_conn)
-print(SQ)
-  df <- RPostgreSQL::dbGetQuery(mydb_conn, SQL)
+print(pkg.globals$mydb_conn)
+#print(pkg.globals$SQL)
+  df <- RPostgreSQL::dbGetQuery(pkg.globals$mydb_conn, SQL)
   return(df)
 }
 
 db.disconnect <- function () {
-  dbDisconnect(mydb_conn)
+  dbDisconnect(pkg.globals$mydb_conn)
 
-  localis_connected <- FALSE
+  pkg.globals$localis_connected <- FALSE
 }
 
 db.transaction <- function () {
-  dbBegin(mydb_conn)
+  dbBegin(pkg.globals$mydb_conn)
 }
 
 db.commit <- function () {
-  dbCommit(mydb_conn)
+  dbCommit(pkg.globals$mydb_conn)
 }
 
 db.rollback <- function () {
-  dbRollback(mydb_conn)
+  dbRollback(pkg.globals$mydb_conn)
 }
 
 db.write_df <- function (table, df) {
-  dbWriteTable(mydb_conn, table, value = df, append = TRUE, row.names = FALSE)
+  dbWriteTable(pkg.globals$mydb_conn, table, value = df, append = TRUE, row.names = FALSE)
 }
 
 db.create_database <- function (conf = NULL) {
