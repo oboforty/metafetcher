@@ -30,6 +30,8 @@ print(pkg.globals$localis_connected)
 
 
 
+
+
 db.query <- function (SQL) {
   if (!pkg.globals$localis_connected) {
     db.connect()
