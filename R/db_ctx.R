@@ -25,6 +25,8 @@ print(localis_connected)
   return (mydb_conn)
 }
 
+
+
 db.query <- function (SQL) {
   if (!pkg.globals$localis_connected) {
     db.connect()
