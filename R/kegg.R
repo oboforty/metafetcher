@@ -106,7 +106,7 @@ KeggHandler <- setRefClass(Class = "KeggHandler",
 
       df.kegg <- create_kegg_record()
 
-      url <- 'http://rest.kegg.jp/get/cpd:%s'
+      url <- 'http://rest.kegg.jp/get/cpd:'
       v <- http_call_api(url, db_id)
 
       if (is.null(v))
