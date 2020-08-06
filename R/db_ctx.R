@@ -18,11 +18,13 @@ db.connect <- function (conf = NULL) {
   unlockBinding(sym="mydb_conn",env=pkg.globals)
   unlockBinding(sym="localis_connected",env=pkg.globals)
 print("Heyyy")
-pkg.globals$mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
+mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
 localis_connected <<- TRUE
+assign("mydb_conn",mydb_conn,envir = pkg.globals)
+assign("localis_connected",localis_connected,envir = pkg.globals)
 print("Connected")
-print( mydb_conn)
-print(localis_connected)
+print( pkg.globals$mydb_conn)
+print(pkd.globals$localis_connected)
   return (mydb_conn)
 }
 
