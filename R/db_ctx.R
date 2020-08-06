@@ -13,11 +13,13 @@ db.connect <- function (conf = NULL) {
 
   # connect to DB
   drv <- dbDriver("PostgreSQL")
- e <- new.env(parent=pkg.globals)
-  e$mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
-e$localis_connected <<- TRUE
-
-  return (e$mydb_conn)
+ #e <- new.env(parent=pkg.globals)
+  pkg.globals$mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
+pkg.globals$localis_connected <<- TRUE
+print("Connected")
+print( pkg.globals$mydb_conn)
+print(pkg.globals$localis_connected)
+  return (pkg.globals$mydb_conn)
 }
 
 db.query <- function (SQL) {
@@ -27,7 +29,7 @@ db.query <- function (SQL) {
   }
 print("Value of db.connect")
 print(pkg.globals$mydb_conn)
-#print(pkg.globals$SQL)
+print(pkg.globals$SQL)
   df <- RPostgreSQL::dbGetQuery(pkg.globals$mydb_conn, SQL)
   return(df)
 }
