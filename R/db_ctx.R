@@ -19,7 +19,7 @@ db.connect <- function (conf = NULL) {
 }
 
 db.query <- function (SQL) {
-  if (!is_connected) {
+  if (!localis_connected) {
     db.connect()
   }
 
