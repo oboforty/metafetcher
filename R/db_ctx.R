@@ -6,6 +6,7 @@ mydb_conn <- NULL
 localis_connected <- FALSE
 
 
+
 db.connect <- function (conf = NULL) {
   # overwrite default config
   if (!is.null(conf))
