@@ -24,7 +24,7 @@ assign("mydb_conn",mydb_conn,envir = pkg.globals)
 assign("localis_connected",localis_connected,envir = pkg.globals)
 print("Connected")
 print( pkg.globals$mydb_conn)
-print(pkd.globals$localis_connected)
+print(pkg.globals$localis_connected)
   return (mydb_conn)
 }
 
