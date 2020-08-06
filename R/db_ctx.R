@@ -39,7 +39,7 @@ db.query <- function (SQL) {
   }
 print("Value of db.connect")
 print(pkg.globals$mydb_conn)
-print(pkg.globals$SQL)
+print(SQL)
   df <- RPostgreSQL::dbGetQuery(pkg.globals$mydb_conn, SQL)
   return(df)
 }
