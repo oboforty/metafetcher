@@ -1,8 +1,8 @@
 require("RPostgreSQL")
 source("R/config.R")
 
-db_conn <- NULL
-is_connected <- FALSE
+mydb_conn <- NULL
+localis_connected <- FALSE
 
 
 db.connect <- function (conf = NULL) {
@@ -12,10 +12,10 @@ db.connect <- function (conf = NULL) {
 
   # connect to DB
   drv <- dbDriver("PostgreSQL")
-  db_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
-  is_connected <<- TRUE
+  mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
+  localis_connected <<- TRUE
 
-  return (db_conn)
+  return (mydb_conn)
 }
 
 db.query <- function (SQL) {
@@ -30,7 +30,7 @@ db.query <- function (SQL) {
 db.disconnect <- function () {
   dbDisconnect(db_conn)
 
-  is_connected <<- FALSE
+  localis_connected <<- FALSE
 }
 
 db.transaction <- function () {
