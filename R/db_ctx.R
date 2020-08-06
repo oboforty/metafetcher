@@ -14,7 +14,8 @@ db.connect <- function (conf = NULL) {
   # connect to DB
   drv <- dbDriver("PostgreSQL")
  #e <- new.env(parent=pkg.globals)
-  unlockBinding(env=pkg.globals)
+  unlockBinding(sym="mydb_conn",env=pkg.globals)
+  unlockBinding(sym="localis_connected",env=pkg.globals)
   pkg.globals$mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
 pkg.globals$localis_connected <<- TRUE
 print("Connected")
