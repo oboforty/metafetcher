@@ -1,3 +1,7 @@
 #export(install_databases)
 export(resolve_metabolites)
-
+exportClasses(PubchemHandler)
+exportClasses(HmdbHandler)
+exportClasses(KeggHandler)
+exportClasses(LipidmapsHandler)
+exportClasses(ChebiHandler)
