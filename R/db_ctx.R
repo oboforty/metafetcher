@@ -1,6 +1,7 @@
 library("RPostgreSQL")
 source("R/config.R")
 
+pkg.env <- new.env(parent = emptyenv())
 mydb_conn <- NULL
 localis_connected <- FALSE
 
