@@ -2,11 +2,18 @@ library(sets)
 source("R/queue.R")
 source("R/utils.R")
 
-source("R/handlers/hmdb.R")
-source("R/handlers/chebi.R")
-source("R/handlers/kegg.R")
-source("R/handlers/lipidmaps.R")
-source("R/handlers/pubchem.R")
+# source("R/handlers/hmdb.R")
+# source("R/handlers/chebi.R")
+# source("R/handlers/kegg.R")
+# source("R/handlers/lipidmaps.R")
+# source("R/handlers/pubchem.R")
+
+source("R/hmdb.R")
+source("R/chebi.R")
+source("R/kegg.R")
+source("R/lipidmaps.R")
+source("R/pubchem.R")
+
 # source("R/handlers/chemspider.R")
 # source("R/handlers/metlin.R")
 
