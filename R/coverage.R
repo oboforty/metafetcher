@@ -48,13 +48,15 @@ do_consistency_test <- function (db, n) {
       print(sprintf("#%s...", i))
   }
 
-  db.disconnect()
+
 
   print(sprintf("Total attributes:", score_total))
   print("----------------")
   print(sprintf("Resolved attributes: %s (%s %%)", score_resolved, round(score_resolved/score_total*100)))
   print(sprintf("Ambigous attributes: %s (%s %%)", score_unresolved, round(score_unresolved/score_total*100)))
   print(sprintf("Missing attributes: %s (%s %%)", score_missing, round(score_missing/score_total*100)))
+
+   db.disconnect()
 }
 
 #do_consistency_test("chebi", 20)
