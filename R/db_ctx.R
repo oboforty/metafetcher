@@ -13,10 +13,11 @@ db.connect <- function (conf = NULL) {
 
   # connect to DB
   drv <- dbDriver("PostgreSQL")
-mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
-localis_connected <<- TRUE
+ e <- new.env(parent=pkg.globals)
+  e$mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
+e$localis_connected <<- TRUE
 
-  return (pkg.globals$mydb_conn)
+  return (e$mydb_conn)
 }
 
 db.query <- function (SQL) {
