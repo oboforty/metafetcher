@@ -21,8 +21,11 @@ db.connect <- function (conf = NULL) {
 db.query <- function (SQL) {
   if (!localis_connected) {
     db.connect()
+    print(" I am here")
   }
-
+print("Value of db.connect")
+print(mydb_conn)
+print(SQ)
   df <- RPostgreSQL::dbGetQuery(mydb_conn, SQL)
   return(df)
 }
