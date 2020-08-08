@@ -110,8 +110,8 @@ revert_df <- function (df) {
 
 http_call_api <- function (url, db_id) {
   out <- tryCatch({
-    print(paste(url,db_id,sep=""))
-    r <- GET(paste(url,db_id,sep=""), timeout(resolve.options$http_timeout))
+    print(sprintf(url,db_id))
+    r <- GET(sprintf(url,db_id), timeout(resolve.options$http_timeout))
 
     if (r$status != 200)
       return (NULL)
