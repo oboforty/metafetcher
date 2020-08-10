@@ -48,7 +48,7 @@ do_consistency_test <- function (db, n) {
       print(sprintf("#%s...", i))
   }
 
-  fileConn<-file("/tests/coverage.txt")
+  fileConn<-file("coverage.txt")
 
   writeLines(
 
