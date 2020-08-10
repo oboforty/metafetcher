@@ -14,7 +14,7 @@ install_databases <- function () {
 
     print("If you have done so, check your database connection setup in config.R:")
 
-    source("R/config.R")
+    source("R/config1.R")
 
     print(sprintf("  username: '%s'  password: '%s'", dbconf$user, dbconf$passwort))
     print(sprintf("  host: '%s'  port: '%s'", dbconf$host, dbconf$port))
@@ -86,3 +86,23 @@ install_databases <- function () {
 }
 
 #install_databases()
+write_config=function(host,port,db_name,user,password,path)
+{
+  fileConn<-file("/R/config1.R")
+
+  writeLines(c("dbconf <- list(",
+  paste("host =",host,","),
+  paste("port =",port,","),
+  paste("db_name =",db_name,","),
+  paste("user =",user,","),
+  paste("password =",password,","),
+  ")",
+  "fileconf <- list(",
+  paste("hmdb_dump_file =",path,"hmdb_metabolites.xml",sep=""),
+  paste("chebi_dump_file =",path,"ChEBI_complete.sdf",sep=""),
+  paste("lipidmaps_dump_file =",path,"LMSD_20191002.sdf",sep=""),
+  ")"),fileConn)
+
+  close(fileConn)
+
+}
