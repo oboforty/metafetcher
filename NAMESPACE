@@ -5,7 +5,7 @@
 #exportClasses(KeggHandler)
 #exportClasses(LipidmapsHandler)
 #exportClasses(ChebiHandler)
-export(db.query)
+#export(db.query)
 export(db.connect)
 export(db.disconnect)
 export(db.transaction)
