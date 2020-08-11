@@ -7,7 +7,7 @@
 #exportClasses(ChebiHandler)
 #export(db.query)
 #export(db.connect)
-export(db.disconnect)
+#export(db.disconnect)
 export(db.transaction)
 export(db.commit)
 export(db.rollback)
