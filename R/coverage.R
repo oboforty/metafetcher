@@ -48,9 +48,10 @@ do_consistency_test <- function (db, n) {
       print(sprintf("#%s...", i))
   }
 
- # fileConn<-file("coverage.txt")
+  fileConn<-file("coverage.txt")
 
-  #writeLines(
+  writeLines(c("hi","hello"),fileConn)
+  close(fileConn)
 
   #c(
   sprintf("Total attributes:", score_total)
@@ -60,7 +61,7 @@ do_consistency_test <- function (db, n) {
  sprintf("Missing attributes: %s (%s %%)", score_missing, round(score_missing/score_total*100))
  #),fileConn)
   print("hello i am in coverage test")
-  close(fileConn)
+
    db.disconnect()
 }
 
