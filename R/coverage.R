@@ -58,10 +58,10 @@ do_consistency_test <- function (db, n) {
  #),fileConn)
   print("hello i am in coverage test")
 
- fileConn<-file("coverage.txt")
+ #fileConn<-file("coverage.txt")
 
-  writeLines(c("hi","hello"),fileConn)
-  close(fileConn)
+  #writeLines(c("hi","hello"),fileConn)
+  #close(fileConn)
 
    db.disconnect()
 }
