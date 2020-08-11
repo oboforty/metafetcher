@@ -48,10 +48,10 @@ do_consistency_test <- function (db, n) {
       print(sprintf("#%s...", i))
   }
 
-  fileConn<-file("coverage.txt")
+ # fileConn<-file("coverage.txt")
 
-  writeLines(c("hi","hello"),fileConn)
-  close(fileConn)
+  #writeLines(c("hi","hello"),fileConn)
+  #close(fileConn)
 
   #c(
   sprintf("Total attributes:", score_total)
