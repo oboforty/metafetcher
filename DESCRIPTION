@@ -16,8 +16,7 @@ Imports:Rcpp,
       httr,
     RPostgreSQL,
     sets,
-    XML,
-    iterators
+    XML,iterators
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
