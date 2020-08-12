@@ -17,7 +17,7 @@ Imports:Rcpp,
     RPostgreSQL,
     sets,
     XML,iterators
-Depends: R (>= 3.6.0)
+Depends: R (>= 3.5.0)
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
