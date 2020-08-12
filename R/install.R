@@ -54,7 +54,7 @@ install_databases <- function () {
 
   # STEP 2: install CHEBI
   if (last_step == 2) {
-    bulk_insert_chebi(fileconf$chebi_dump_file)
+    #bulk_insert_chebi(fileconf$chebi_dump_file)
 
     last_step <- last_step + 1
     saveRDS(last_step, fn_installprog)
