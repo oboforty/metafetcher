@@ -12,12 +12,11 @@ Description: Integration of metabolites data and sorting the interpredencies of 
   2-KEGG
   3-Lipidmaps
   4-Chebi
-Imports:
-Rcpp
-httr
-RPostgreSQL
-sets
-XML
+Imports:Rcpp,
+      httr,
+    RPostgreSQL,
+    sets,
+    XML,
 iterators
 Encoding: UTF-8
 LazyData: true
