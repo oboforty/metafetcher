@@ -14,7 +14,7 @@ install_databases <- function () {
 
     print("If you have done so, check your database connection setup in config.R:")
 
-    source("R/config.R")
+    source("R/config1.R")
 
     print(sprintf("  username: '%s'  password: '%s'", dbconf$user, dbconf$passwort))
     print(sprintf("  host: '%s'  port: '%s'", dbconf$host, dbconf$port))
