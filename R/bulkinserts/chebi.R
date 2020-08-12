@@ -38,8 +38,8 @@ bulk_insert_chebi <- function(filepath) {
 
 
   # connect to DB
-  db.connect()
-  remigrate_chebi(db_conn)
+
+  remigrate_chebi(db.connect())
   db.transaction()
 
   # read file line by line

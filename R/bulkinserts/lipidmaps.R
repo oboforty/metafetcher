@@ -34,8 +34,8 @@ bulk_insert_lipidmaps <- function(filepath) {
   df.lipidmaps <- create_empty_record(1, attr.lm, mcard.lm)
 
   # connect to DB
-  db.connect()
-  remigrate_lipidmaps(db_conn)
+
+  remigrate_lipidmaps(db.connect())
   db.transaction()
 
   # read file line by line

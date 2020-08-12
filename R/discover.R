@@ -79,7 +79,7 @@ resolve_single_id <- function(start_db_tag, start_db_id) {
 #' resp <- resolve_metabolites(df_from_csv)
 #' df.out <- resp$df
 #' view(df.out)
-resolve_metabolites <- function(df.discovered) {
+resolve_metabolites<- function(df.discovered) {
   'Discover missing IDs and attributes from a dataframe input'
 
   # transform data.frame to have lists instead of vectors
