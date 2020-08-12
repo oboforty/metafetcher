@@ -2,11 +2,9 @@ Package: metafetcher
 Title: An R package for linking and standardizing metabolites data 
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Sara",
-           family = "Yones",
-           role = c("aut", "cre"),
-           email = "sara.younes@icm.uu.se",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Sara", "Younes", email = "sara.younes@icm.uu.se", role = c("aut", "cre")),
+    person("Rajmond", "Casombordi", email = "", role = c("aut", "ctb")),
+    person("Klev", "Diamanti", role = c("ctb")),
 Description: Integration of metabolites data and sorting the interpredencies of metabolites information between small-compound databases
   1-HMDB
   2-KEGG
@@ -17,7 +15,10 @@ Imports:Rcpp,
     RPostgreSQL,
     sets,
     XML,iterators
+Depends: R (>= 3.6.0)
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
+URL:  https://github.com/komorowskilab/metafetcher
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
