@@ -1,15 +1,24 @@
 Package: metafetcher
-Title: Something
+Title: An R package for linking and standardizing metabolites data 
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Sara",
+           family = "Yones",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "sara.younes@icm.uu.se",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: Integration of metabolites data and sorting the interpredencies of metabolites information between small-compound databases
+  1-HMDB
+  2-KEGG
+  3-Lipidmaps
+  4-Chebi
+Imports:
+Rcpp
+httr
+RPostgreSQL
+sets
+XML
+iterators
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
