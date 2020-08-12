@@ -39,6 +39,7 @@ bulk_insert_lipidmaps <- function(filepath) {
   db.transaction()
 
   # read file line by line
+  print(filepath)
   f_con <- file(filepath, "r")
   it <- ireadLines(f_con)
 
