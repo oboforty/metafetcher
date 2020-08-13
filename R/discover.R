@@ -2,11 +2,18 @@ library(sets)
 source("R/queue.R")
 source("R/utils.R")
 
-source("R/handlers/hmdb.R")
-source("R/handlers/chebi.R")
-source("R/handlers/kegg.R")
-source("R/handlers/lipidmaps.R")
-source("R/handlers/pubchem.R")
+# source("R/handlers/hmdb.R")
+# source("R/handlers/chebi.R")
+# source("R/handlers/kegg.R")
+# source("R/handlers/lipidmaps.R")
+# source("R/handlers/pubchem.R")
+
+source("R/hmdb.R")
+source("R/chebi.R")
+source("R/kegg.R")
+source("R/lipidmaps.R")
+source("R/pubchem.R")
+
 # source("R/handlers/chemspider.R")
 # source("R/handlers/metlin.R")
 
@@ -23,10 +30,10 @@ attr.refs <- names(db_handlers)
 # + metlin_id, cas_id, chemspider_id
 
 attr.meta <- c(
-    attr.refs,
-    "inchi", "inchikey", "smiles",
-    "names", "formula",
-    "mass", "monoisotopic_mass"
+  attr.refs,
+  "inchi", "inchikey", "smiles",
+  "names", "formula",
+  "mass", "monoisotopic_mass"
 )
 
 resolve.options <- list(
@@ -60,7 +67,7 @@ resolve_single_id <- function(start_db_tag, start_db_id) {
   df.res[[1, start_db_tag]] <- start_db_id
 
   # call the resolve algorithm
-  return(resolve(df.res))
+  return(resolve_metabolites(df.res))
 }
 
 #' Resolves missing metabolome IDs and other attributes in dataframe
@@ -69,10 +76,10 @@ resolve_single_id <- function(start_db_tag, start_db_id) {
 #' @return A list containing some statistics and the same dataframe, extended with missing data.
 #' @examples
 #' df_from_csv <- read.csv("meta_ids.csv", stringsAsFactors=FALSE)
-#' resp <- resolve(df_from_csv)
+#' resp <- resolve_metabolites(df_from_csv)
 #' df.out <- resp$df
 #' view(df.out)
-resolve <- function(df.discovered) {
+resolve_metabolites<- function(df.discovered) {
   'Discover missing IDs and attributes from a dataframe input'
 
   # transform data.frame to have lists instead of vectors

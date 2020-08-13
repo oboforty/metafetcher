@@ -38,8 +38,8 @@ bulk_insert_chebi <- function(filepath) {
 
 
   # connect to DB
-  db.connect()
-  remigrate_chebi(db_conn)
+
+  remigrate_chebi(db.connect())
   db.transaction()
 
   # read file line by line
@@ -49,7 +49,7 @@ bulk_insert_chebi <- function(filepath) {
   j <- 1
   state <- "something"
   start_time <- Sys.time()
-  print(sprintf("(%s) Inserting ChEBI to DB...", start_time))
+  print(sprintf("(%s) Inserting ChEBI to DB... This will take a while", start_time))
 
   repeat {
     line <- try(nextElem(it))
@@ -93,8 +93,8 @@ bulk_insert_chebi <- function(filepath) {
         else if (attr == 'pubchem_id')
           if (startsWith(line, "SID:"))
             next
-          else if(startsWith(line,"CID:"))
-            line <- lstrip(line, "CID: ")
+        else if(startsWith(line,"CID:"))
+          line <- lstrip(line, "CID: ")
 
         df.chebi[[1, attr]] <- line
       }
