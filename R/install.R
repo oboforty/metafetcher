@@ -54,7 +54,7 @@ install_databases <- function () {
 
   # STEP 2: install CHEBI
   if (last_step == 2) {
-    bulk_insert_chebi(fileconf$chebi_dump_file)
+   # bulk_insert_chebi(fileconf$chebi_dump_file)
 
     last_step <- last_step + 1
     saveRDS(last_step, fn_installprog)
@@ -63,7 +63,7 @@ install_databases <- function () {
 
   # STEP 3: install Lipidmaps
   if (last_step == 3) {
-   bulk_insert_lipidmaps(fileconf$lipidmaps_dump_file)
+  # bulk_insert_lipidmaps(fileconf$lipidmaps_dump_file)
 
     last_step <- last_step + 1
      saveRDS(last_step, fn_installprog)
@@ -71,7 +71,7 @@ install_databases <- function () {
 
   # STEP 4: install secondary tables
   if (last_step == 4) {
-    bulk_insert_secondary_ids()
+   # bulk_insert_secondary_ids()
 
     last_step <- last_step + 1
     saveRDS(last_step, fn_installprog)
