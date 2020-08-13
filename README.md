@@ -1,4 +1,4 @@
-# metafetcher
+# MetaFetcheR
 
 ## Usage
 Install the dump files script first!
