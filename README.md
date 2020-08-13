@@ -36,11 +36,11 @@ Please uncompress them all, and put them in a directory tmp.
 
 ### II. Inserting the data in the local database
 
-call function write_config to set the configuration of the local database cache 
+1- This step is optional there is already a default config file however if you want to set your own configuration call function write_config() to set the configuration of the local database cache 
 ```R
 write_config(host,port,db_name,user,password,path_of_tmp_folder)
 ```
-call function install_database() for creating the tables and inserting the data from the tmp folder preferably put it in your R project directory
+2- call function install_database() for creating the tables and inserting the data from the tmp folder preferably put it in your R project directory
 
 ```R
 install_database()
