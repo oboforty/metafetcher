@@ -40,7 +40,7 @@ call function write_config to set the configuration of the local database cache
 ```R
 write_config(host,port,db_name,user,password,path_of_tmp_folder)
 ```
-call function install_database() for creating the tables and inserting the data from the tmp folder 
+call function install_database() for creating the tables and inserting the data from the tmp folder preferably put it in your R project directory
 
 ```R
 install_database()
