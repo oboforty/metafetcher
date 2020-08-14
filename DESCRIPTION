@@ -8,7 +8,6 @@ Authors@R:
     person("Jan", "Komorowski", email = "jan.komorowski@icm.uu.se", role = c("aut", "cph")))
 Maintainer: Jan Komorowski <jan.komorowski@icm.uu.se>, Sara Younes <sara.younes@icm.uu.se>
 Description: Integration of metabolites data and sorting the interpredencies of metabolites information between small-compound databases
- 
   1-HMDB
   2-KEGG
   3-Lipidmaps
