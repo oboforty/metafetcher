@@ -1,13 +1,14 @@
 library("RPostgreSQL")
 source("R/config1.R")
 
-pkg.globals <- new.env()
-pkg.globals$mydb_conn <- NULL
-pkg.globals$localis_connected <- FALSE
-
 
 
 db.connect <- function (conf = NULL) {
+  pkg.globals <- new.env()
+  pkg.globals$mydb_conn <- NULL
+  pkg.globals$localis_connected <- FALSE
+
+
   # overwrite default config
   if (!is.null(conf))
     dbconf <- conf;
