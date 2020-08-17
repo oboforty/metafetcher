@@ -90,20 +90,17 @@ install_databases <- function () {
 write_config=function(host,port,db_name,user,password,path)
 {
   fileConn<-file("R/config1.R")
-
-  writeLines(c("dbconf <- list(",
-  paste("host =",host,","),
-  paste("port =",port,","),
-  paste("db_name =",db_name,","),
-  paste("user =",user,","),
-  paste("password =",password,","),
-  ")",
-  "fileconf <- list(",
-  paste("hmdb_dump_file =",path,"hmdb_metabolites.xml",sep=""),
-  paste("chebi_dump_file =",path,"ChEBI_complete.sdf",sep=""),
-  paste("lipidmaps_dump_file =",path,"LMSD_20191002.sdf",sep=""),
-  ")"),fileConn)
-
+  cat("dbconf <- list(","\n",
+      "host =","\"",host,"\"",",","\n",
+      "dbname =","\"",db_name,"\"",",","\n",
+      "user =","\"",user,"\"",",","\n",
+      "password =","\"",password,"\"","\n",
+      ")","\n",
+      "fileconf <- list(","\n",
+      "hmdb_dump_file=","\"",path,"hmdb_metabolites.xml","\"",",","\n",
+      "chebi_dump_file=","\"",path,"chebi_dump_file.xml","\"",",","\n",
+      "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
+      ")","\n",file=fileConn,sep="")
   close(fileConn)
 
 }
