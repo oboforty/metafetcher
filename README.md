@@ -93,5 +93,5 @@ For how to use the package please visit (https://komorowskilab.github.io/MetaFet
 - Sara Yones sara.younes@icm.uu.se 
  @SaraYones
 - Klev Diamanti 
- @klev.diamanti
+ @klevdiamanti
 
