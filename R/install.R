@@ -1,8 +1,8 @@
 install_databases <- function () {
-  source("R/bulkinserts/hmdb.R")
-  source("R/bulkinserts/chebi.R")
-  source("R/bulkinserts/lipidmaps.R")
-  source("R/bulkinserts/secondaries.R")
+  source("R/hmdbbulk.R")
+  source("R/hebibulk.R")
+  source("R/lipidmapsbulk.R")
+  source("R/secondariesbulk.R")
 
   print("Checking Postgres install...")
 
