@@ -6,7 +6,9 @@ install_databases <- function () {
   source("R/config1.R")
 
 
-
+  pkg.globals <- new.env()
+  pkg.globals$dbconf <- dbconf
+  pkg.globals$fileconf<- fileconf
 
   print("Checking Postgres install...")
 
@@ -106,14 +108,12 @@ write_config=function(host,port,db_name,user,password,path)
   #     "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
   #     ")","\n",file=fileConn,sep="")
   # close(fileConn)
-  pkg.globals <- new.env()
-  pkg.globals$dbconf <- NULL
-  pkg.globals$fileconf<- NULL
+
 
   unlockBinding(sym="dbconf",env=pkg.globals)
   unlockBinding(sym="fileconf",env=pkg.globals)
   #print("Heyyy1")
-  assign("dbconf",dbconf,envir = pkg.globals)
+
   dbconf$host<<-host
   dbconf$dbname<<-db_name
   dbconf$port<<-port
@@ -121,6 +121,7 @@ write_config=function(host,port,db_name,user,password,path)
   dbconf$password<<-password
   dbconf$path<<-path
 
+  assign("dbconf",dbconf,envir = pkg.globals)
  # assign("localis_connected",localis_connected,envir = pkg.globals)
 #devtools::load_all()
 }
