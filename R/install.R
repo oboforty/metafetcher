@@ -110,8 +110,8 @@ write_config=function(host,port,db_name,user,password,path)
   # close(fileConn)
 
 
-  unlockBinding(sym="dbconf",env=pkg.globals)
-  unlockBinding(sym="fileconf",env=pkg.globals)
+ # unlockBinding(sym="dbconf",env=pkg.globals)
+  #unlockBinding(sym="fileconf",env=pkg.globals)
   #print("Heyyy1")
 
   dbconf$host<<-host
