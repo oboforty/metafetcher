@@ -1,5 +1,6 @@
 dbconf <- list(
 host ="localhost",
+port=5432,
 dbname ="metafetcher",
 user ="postgres",
 password ="postgres"
