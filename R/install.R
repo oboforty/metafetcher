@@ -113,11 +113,14 @@ write_config=function(host,port,db_name,user,password,path)
   unlockBinding(sym="dbconf",env=pkg.globals)
   unlockBinding(sym="fileconf",env=pkg.globals)
   #print("Heyyy1")
+  assign("dbconf",dbconf,envir = pkg.globals)
   dbconf$host<<-host
   dbconf$dbname<<-db_name
   dbconf$port<<-port
   dbconf$user<<-user
   dbconf$password<<-password
   dbconf$path<<-path
+
+ # assign("localis_connected",localis_connected,envir = pkg.globals)
 #devtools::load_all()
 }
