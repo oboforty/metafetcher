@@ -1,6 +1,7 @@
 Package: metafetcher
 Title: An R package for linking and standardizing metabolites data 
 Version: 0.0.0.9000
+Imports:RPostgreSQL,Rcpp,httr,sets,XML,iterators
 Authors@R: 
     c(person("Sara", "Younes", email = "sara.younes@icm.uu.se", role = c("aut", "ctb")),
     person("Rajmund", "Csombordi", email = "rajmund.csombordi@gmail.com", role = c("aut", "cre")),
@@ -12,15 +13,9 @@ Description: Integration of metabolites data and sorting the interpredencies of 
   2-KEGG
   3-Lipidmaps
   4-Chebi
-Imports:Rcpp,
-      httr,
-    RPostgreSQL,
-    sets,
-    XML,iterators
 Depends: R (>= 3.5.0)
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
-URL:  https://github.com/komorowskilab/metafetcher
-Roxygen: list(markdown = TRUE)
+URL:  httpn: list(markdown = TRUE)
 RoxygenNote: 7.1.0
