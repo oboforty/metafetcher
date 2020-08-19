@@ -1,3 +1,8 @@
+pkg.globals <- new.env()
+
+pkg.globals$dbconf <- dbconf
+pkg.globals$fileconf<- fileconf
+
 dbconf <- list(
 host ="localhost",
 port=5432,
@@ -10,3 +15,4 @@ hmdb_dump_file="/Users/saryo614/Desktop/tmp/hmdb_metabolites.xml",
 chebi_dump_file="/Users/saryo614/Desktop/tmp/chebi_dump_file.xml",
 lipidmaps_dump_file="/Users/saryo614/Desktop/tmp/LMSD_20191002.sdf"
 )
+

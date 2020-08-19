@@ -6,9 +6,7 @@ install_databases <- function () {
   source("R/config1.R")
 
 
-  pkg.globals <- new.env()
-  pkg.globals$dbconf <- dbconf
-  pkg.globals$fileconf<- fileconf
+
 
   print("Checking Postgres install...")
 
@@ -114,13 +112,13 @@ write_config=function(host,port,db_name,user,password,path)
   #unlockBinding(sym="fileconf",env=pkg.globals)
   #print("Heyyy1")
 
-  dbconf$host<<-host
-  dbconf$dbname<<-db_name
+  dbconf$host<-host
+  dbconf$dbname<-db_name
 
-  dbconf$port<<-port
-  dbconf$user<<-user
-  dbconf$password<<-password
-  dbconf$path<<-path
+  dbconf$port<-port
+  dbconf$user<-user
+  dbconf$password<-password
+  dbconf$path<-path
 
   assign("dbconf",dbconf,envir = pkg.globals)
  # assign("localis_connected",localis_connected,envir = pkg.globals)
