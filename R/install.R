@@ -3,6 +3,10 @@ install_databases <- function () {
   source("R/hebibulk.R")
   source("R/lipidmapsbulk.R")
   source("R/secondariesbulk.R")
+  source("R/config1.R")
+
+
+
 
   print("Checking Postgres install...")
 
@@ -89,18 +93,31 @@ install_databases <- function () {
 #install_databases()
 write_config=function(host,port,db_name,user,password,path)
 {
-  fileConn<-file("R/config1.R")
-  cat("dbconf <- list(","\n",
-      "host =","\"",host,"\"",",","\n",
-      "dbname =","\"",db_name,"\"",",","\n",
-      "user =","\"",user,"\"",",","\n",
-      "password =","\"",password,"\"","\n",
-      ")","\n",
-      "fileconf <- list(","\n",
-      "hmdb_dump_file=","\"",path,"hmdb_metabolites.xml","\"",",","\n",
-      "chebi_dump_file=","\"",path,"chebi_dump_file.xml","\"",",","\n",
-      "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
-      ")","\n",file=fileConn,sep="")
-  close(fileConn)
-devtools::load_all()
+  # fileConn<-file("R/config1.R")
+  # cat("dbconf <- list(","\n",
+  #     "host =","\"",host,"\"",",","\n",
+  #     "dbname =","\"",db_name,"\"",",","\n",
+  #     "user =","\"",user,"\"",",","\n",
+  #     "password =","\"",password,"\"","\n",
+  #     ")","\n",
+  #     "fileconf <- list(","\n",
+  #     "hmdb_dump_file=","\"",path,"hmdb_metabolites.xml","\"",",","\n",
+  #     "chebi_dump_file=","\"",path,"chebi_dump_file.xml","\"",",","\n",
+  #     "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
+  #     ")","\n",file=fileConn,sep="")
+  # close(fileConn)
+  pkg.globals <- new.env()
+  pkg.globals$dbconf <- NULL
+  pkg.globals$fileconf<- NULL
+
+  unlockBinding(sym="dbconf",env=pkg.globals)
+  unlockBinding(sym="fileconf",env=pkg.globals)
+  #print("Heyyy1")
+  dbconf$host<<-host
+  dbconf$dbname<<-db_name
+  dbconf$port<<-port
+  dbconf$user<<-user
+  dbconf$password<<-password
+  dbconf$path<<-path
+#devtools::load_all()
 }
