@@ -1,7 +1,7 @@
 pkg.globals <- new.env()
 
-pkg.globals$dbconf <- dbconf
-pkg.globals$fileconf<- fileconf
+pkg.globals$dbconf <- NULL
+pkg.globals$fileconf<- NULL
 
 dbconf <- list(
 host ="localhost",
