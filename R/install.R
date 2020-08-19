@@ -115,10 +115,10 @@ write_config=function(host,port,db_name,user,password,path)
   dbconf$host<-host
   dbconf$dbname<-db_name
 
-  dbconf$port<-port
-  dbconf$user<-user
-  dbconf$password<-password
-  dbconf$path<-path
+  dbconf$port<<-port
+  dbconf$user<<-user
+  dbconf$password<<-password
+  dbconf$path<<-path
 
   assign("dbconf",dbconf,envir = pkg.globals)
  # assign("localis_connected",localis_connected,envir = pkg.globals)
