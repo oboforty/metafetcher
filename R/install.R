@@ -116,6 +116,7 @@ write_config=function(host,port,db_name,user,password,path)
 
   dbconf$host<<-host
   dbconf$dbname<<-db_name
+
   dbconf$port<<-port
   dbconf$user<<-user
   dbconf$password<<-password
