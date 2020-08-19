@@ -20,7 +20,7 @@ install_databases <- function () {
 
     source("R/config1.R")
 
-    print(sprintf("  username: '%s'  password: '%s'", dbconf$user, dbconf$passwort))
+    print(sprintf("  username: '%s'  password: '%s'", dbconf$user, dbconf$password))
     print(sprintf("  host: '%s'  port: '%s'", dbconf$host, dbconf$port))
     print(sprintf("  database: '%s'", dbconf$dbname))
 
