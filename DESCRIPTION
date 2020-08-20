@@ -1,7 +1,7 @@
 Package: metafetcher
 Title: An R package for linking and standardizing metabolites data 
 Version: 0.0.0.9000
-Imports:RPostgreSQL,Rcpp,httr,sets,XML,DBI,config,stringr,iterators
+Imports:RPostgreSQL,Rcpp,httr,stringr,sets,XML,DBI,config,iterators
 Authors@R: 
     c(person("Sara", "Younes", email = "sara.younes@icm.uu.se", role = c("aut", "ctb")),
     person("Rajmund", "Csombordi", email = "rajmund.csombordi@gmail.com", role = c("aut", "cre")),
