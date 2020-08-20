@@ -20,7 +20,9 @@ db.connect <- function (conf = NULL) {
   unlockBinding(sym="mydb_conn",env=pkg.globals)
   unlockBinding(sym="localis_connected",env=pkg.globals)
 #print("Heyyy1")
+
   dbconf=NULL
+
 
   dbconf$host <- config::get("host")
   dbconf$port<-as.numeric(config::get("port"))

@@ -5,8 +5,11 @@ install_databases <- function () {
   source("R/secondariesbulk.R")
 #  source("R/config1.R")
 
+<<<<<<< HEAD
   dbconf=NULL
   fileconf=NULL
+=======
+>>>>>>> e75b2106bb4a39d478d53f895dba1895acec5fdb
   dbconf$host <- config::get("host")
   dbconf$port<-as.numeric(config::get("port"))
   dbconf$dbname<-config::get("dbname")
