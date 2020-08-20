@@ -1,11 +1,10 @@
 import(Rcpp)
 import(httr)
 import(RPostgreSQL)
-importFrom(stringr,str_detect)
+importFrom(stringi)
 importFrom(stringr, str_match_all)
 importFrom(stringr, str_replace_all)
 importFrom(stringr, str_split)
-
 exportClasses(PubchemHandler)
 exportClasses(HmdbHandler)
 exportClasses(KeggHandler)
