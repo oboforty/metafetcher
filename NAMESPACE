@@ -1,7 +1,8 @@
 import(Rcpp)
 import(httr)
 import(RPostgreSQL)
-import(stringr)
+@importFrom stringr str_detect
+@importFrom stringr str_match_all
 import(sets)
 import(XML)
 import(DBI)
