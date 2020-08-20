@@ -106,7 +106,7 @@ write_config=function(host,port,db_name,user,password,path)
   #     "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
   #     ")","\n",file=fileConn,sep="")
   # close(fileConn)
-  readLines(fil, n = -1)
+  readLines(fileConn, n = -1)
   close(fileConn)
 
  # unlockBinding(sym="dbconf",env=pkg.globals)
