@@ -157,6 +157,8 @@ PubchemHandler <- setRefClass(Class = "PubchemHandler",
           df.pubchem$chebi_id <- lstrip(xdb_id, "CHEBI:")
         else if (startsWith(xdb_id, 'HMDB'))
           df.pubchem$hmdb_id <- xdb_id
+        #' @importFrom stri_detect stringr
+
         else if (substr(xdb_id, 1, 1) == 'C' && str_detect(xdb_id, '^C\\d{4,9}$'))
           df.pubchem$kegg_id <- xdb_id
       }
