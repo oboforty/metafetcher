@@ -1,5 +1,5 @@
 library("RPostgreSQL")
-source("R/config1.R")
+#source("R/config1.R")
 
 
 pkg.globals <- new.env()
