@@ -1,7 +1,7 @@
 Package: metafetcher
 Title: An R package for linking and standardizing metabolites data 
 Version: 0.0.0.9000
-Imports:RPostgreSQL,Rcpp,httr,stringr,sets,XML,DBI,config,iterators
+Imports:RPostgreSQL,Rcpp,httr,sets,XML,DBI,config,iterators
 
 Authors@R: 
     c(person("Sara", "Younes", email = "sara.younes@icm.uu.se", role = c("aut", "ctb")),
@@ -14,7 +14,7 @@ Description: Integration of metabolites data and sorting the interpredencies of 
   2-KEGG
   3-Lipidmaps
   4-Chebi
-Depends: R (>= 3.5.0)
+Depends: R (>= 3.5.0),stringr
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
