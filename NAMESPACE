@@ -3,7 +3,9 @@ import(httr)
 import(RPostgreSQL)
 importFrom(stringr, str_detect)
 importFrom(stringr, str_match_all)
+
 importFrom(stringr, str_split)
+
 import(sets)
 import(XML)
 import(DBI)
