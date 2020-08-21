@@ -49,11 +49,11 @@ install_databases <- function () {
 
     con <- dbConnect(RPostgres::Postgres(), dbname = db, host=host_db, port=db_port, user=db_user, password=db_password)
 
-    stop(sprintf("DB error received: %s", e))
+   # stop(sprintf("DB error received: %s", e))
 
 
     # todo: create DB?
-    #print("Creating database...")
+    print("Creating database...")
     return(NULL)
   })
 
