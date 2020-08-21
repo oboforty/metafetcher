@@ -35,25 +35,13 @@ install_databases <- function () {
     print(sprintf("  username: '%s'  password: '%s'", dbconf$user, dbconf$password))
     print(sprintf("  host: '%s'  port: '%s'", dbconf$host, dbconf$port))
     print(sprintf("  database: '%s'", dbconf$dbname))
-    library(DBI)
-
-    db <-  dbconf$dbname #provide the name of your db
-
-    host_db <- dbconf$host#i.e. # i.e. 'ec2-54-83-201-96.compute-1.amazonaws.com'
-
-    db_port <- dbconf$port  # or any other port specified by the DBA
-
-    db_user <-dbconf$user
-
-    db_password <- dbconf$password
-
-    con <- dbConnect(RPostgres::Postgres(), dbname = db, host=host_db, port=db_port, user=db_user, password=db_password)
 
    # stop(sprintf("DB error received: %s", e))
 
 
     # todo: create DB?
     print("Creating database...")
+    db.create_database(dbconf)
     return(NULL)
   })
 
