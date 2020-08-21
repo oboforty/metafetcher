@@ -14,9 +14,9 @@ install_databases <- function () {
   dbconf$dbname<-config::get("dbname")
   dbconf$user<-config::get("user")
   dbconf$password<-config::get("password")
- fileconf$hmdb_dump_file <- config::get("hmdb_dump_file")
- fileconf$chebi_dump_file<-config::get("chebi_dump_file")
- fileconf$lipidmaps_dump_file<-config::get("lipidmaps_dump_file")
+ fileconf$hmdb_dump_file <- config::get("hmdbDumpFile")
+ fileconf$chebi_dump_file<-config::get("chebiDumpFile")
+ fileconf$lipidmaps_dump_file<-config::get("lipidmapsDumpFile")
 
 
   print("Checking Postgres install...")
