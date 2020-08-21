@@ -32,6 +32,7 @@ bulk_insert_hmdb <- function(filepath) {
   )
 
   # data frame buffer for the DB
+  print(filepath)
   attr.hmdb <- unique(unlist(mapping.hmdb))
   mcard.hmdb <- c("names", "hmdb_id_alt")
 
