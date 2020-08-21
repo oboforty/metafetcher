@@ -1,8 +1,8 @@
 install_databases <- function () {
-  source("R/hmdbbulk.R")
-  source("R/hebibulk.R")
-  source("R/lipidmapsbulk.R")
-  source("R/secondariesbulk.R")
+ # source("R/hmdbbulk.R")
+#  source("R/hebibulk.R")
+ # source("R/lipidmapsbulk.R")
+#  source("R/secondariesbulk.R")
 #  source("R/config1.R")
 
 
