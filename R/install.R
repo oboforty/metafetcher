@@ -62,6 +62,7 @@ install_databases <- function () {
 
   # STEP 1: install HMDB
   if (last_step == 1) {
+    print(fileconf$hmdb_dump_file)
     bulk_insert_hmdb(fileconf$hmdb_dump_file)
 
     last_step <- last_step + 1
