@@ -89,7 +89,7 @@ install_databases <- function () {
 
   # STEP 4: install secondary tables
   if (last_step == 4) {
-   # bulk_insert_secondary_ids()
+   bulk_insert_secondary_ids()
 
     last_step <- last_step + 1
     saveRDS(last_step, fn_installprog)
