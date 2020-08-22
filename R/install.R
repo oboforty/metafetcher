@@ -96,7 +96,7 @@ install_databases <- function () {
   }
 
   # STEP 5: wrap up
-  if (last_step == 5) {
+ #if (last_step == 5) {
     SQL="CREATE TABLE kegg_data (
 	kegg_id VARCHAR(20) NOT NULL,
 	names TEXT[],
@@ -115,7 +115,7 @@ install_databases <- function () {
     file.remove(fn_installprog)
 
     print("Install completed!")
-  }
+  #}
 }
 
 #install_databases()
