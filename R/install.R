@@ -64,7 +64,7 @@ install_databases <- function () {
   # STEP 1: install HMDB
   if (last_step == 1) {
     print(fileconf$hmdb_dump_file)
-    bulk_insert_hmdb(fileconf$hmdb_dump_file)
+  #  bulk_insert_hmdb(fileconf$hmdb_dump_file)
 
     last_step <- last_step + 1
     saveRDS(last_step, fn_installprog)
@@ -72,7 +72,7 @@ install_databases <- function () {
 
   # STEP 2: install CHEBI
   if (last_step == 2) {
-    bulk_insert_chebi(fileconf$chebi_dump_file)
+   # bulk_insert_chebi(fileconf$chebi_dump_file)
 
     last_step <- last_step + 1
     saveRDS(last_step, fn_installprog)
@@ -97,6 +97,20 @@ install_databases <- function () {
 
   # STEP 5: wrap up
   if (last_step == 5) {
+    SQL="CREATE TABLE kegg_data (
+	kegg_id VARCHAR(20) NOT NULL,
+	names TEXT[],
+	exact_mass FLOAT,
+	mol_weight FLOAT,
+	comments TEXT,
+	formula VARCHAR(256),
+	chebi_id VARCHAR(20),
+	lipidmaps_id VARCHAR(20),
+	pubchem_id VARCHAR(20),
+	ref_etc TEXT,
+	PRIMARY KEY (kegg_id)
+)"
+    db.query <- function (SQL)
     db.disconnect()
     file.remove(fn_installprog)
 
