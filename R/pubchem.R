@@ -1,4 +1,4 @@
-library(stringi)
+library(stringr)
 
 source("R/db_ctx.R")
 source("R/utils.R")
