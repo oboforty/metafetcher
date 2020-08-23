@@ -159,7 +159,8 @@ PubchemHandler <- setRefClass(Class = "PubchemHandler",
           df.pubchem$hmdb_id <- xdb_id
 
 
-        else if (substr(xdb_id, 1, 1) == 'C' && str_detect(xdb_id, '^C\\d{4,9}$'))
+      #  else if (substr(xdb_id, 1, 1) == 'C' && str_detect(xdb_id, '^C\\d{4,9}$'))
+        else if (substr(xdb_id, 1, 1) == 'C' && grepl('^C\\d{4,9}$',xdb_id))
           df.pubchem$kegg_id <- xdb_id
       }
       #print(df.pubchem)
