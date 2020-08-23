@@ -89,14 +89,14 @@ install_databases <- function () {
 
   # STEP 4: install secondary tables
   if (last_step == 4) {
-  # bulk_insert_secondary_ids()
+   bulk_insert_secondary_ids()
 
     last_step <- last_step + 1
     saveRDS(last_step, fn_installprog)
   }
 
   # STEP 5: wrap up
- #if (last_step == 5) {
+ if (last_step == 5) {
     SQL="CREATE TABLE kegg_data (
 	kegg_id VARCHAR(20) NOT NULL,
 	names TEXT[],
@@ -137,7 +137,7 @@ install_databases <- function () {
     file.remove(fn_installprog)
 
     print("Install completed!")
-  #}
+  }
 }
 
 #install_databases()
