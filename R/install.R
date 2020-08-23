@@ -111,6 +111,7 @@ install_databases <- function () {
 	PRIMARY KEY (kegg_id)
 )"
     db.query <- function (SQL)
+      db.commit()
     db.disconnect()
     file.remove(fn_installprog)
 
