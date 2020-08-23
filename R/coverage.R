@@ -14,8 +14,8 @@ do_consistency_test <- function (db, n) {
   db_tag <- paste(c(db,'_id'),collapse="")
   records <- db.query(sprintf("SELECT %s FROM %s_data LIMIT %s OFFSET 6000", db_tag, db, n))
 
-  resolve.options$suppress <<- TRUE
-  resolve.options$open_connection <<- FALSE
+  resolve.options$suppress <- TRUE
+  resolve.options$open_connection <- FALSE
 
   i <- 0
   start_time <- Sys.time()

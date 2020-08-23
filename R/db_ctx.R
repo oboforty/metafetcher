@@ -1,5 +1,5 @@
 library("RPostgreSQL")
-source("R/config1.R")
+#source("R/config1.R")
 
 
 pkg.globals <- new.env()
@@ -20,6 +20,17 @@ db.connect <- function (conf = NULL) {
   unlockBinding(sym="mydb_conn",env=pkg.globals)
   unlockBinding(sym="localis_connected",env=pkg.globals)
 #print("Heyyy1")
+
+  dbconf=NULL
+
+
+  dbconf$host <- config::get("host")
+  dbconf$port<-as.numeric(config::get("port"))
+  dbconf$dbname<-config::get("dbname")
+  dbconf$user<-config::get("user")
+  dbconf$password<-config::get("password")
+
+ # print(get("dbconf$port", envir = pkg.globals))
 mydb_conn <<- dbConnect(drv, dbname = dbconf$dbname, host = dbconf$host, port = dbconf$port, user = dbconf$user, password = dbconf$password)
 localis_connected <<- TRUE
 assign("mydb_conn",mydb_conn,envir = pkg.globals)

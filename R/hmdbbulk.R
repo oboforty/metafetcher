@@ -32,6 +32,7 @@ bulk_insert_hmdb <- function(filepath) {
   )
 
   # data frame buffer for the DB
+
   attr.hmdb <- unique(unlist(mapping.hmdb))
   mcard.hmdb <- c("names", "hmdb_id_alt")
 
@@ -47,7 +48,7 @@ bulk_insert_hmdb <- function(filepath) {
   # connect to DB
   remigrate_hmdb(db.connect())
   db.transaction()
-
+  print(filepath)
   print(sprintf("(%s) Inserting HMDB to DB... This will take a while", start_time))
 
   # Iterative XML parsing. this iterates on each xml tag individually
