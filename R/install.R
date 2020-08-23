@@ -110,7 +110,7 @@ install_databases <- function () {
 	ref_etc TEXT,
 	PRIMARY KEY (kegg_id)
 )"
-    db.query <- function (SQL)
+    db.query(SQL)
       db.commit()
     db.disconnect()
     file.remove(fn_installprog)
