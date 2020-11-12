@@ -17,7 +17,7 @@ do_consistency_test <- function (db, n,attempts) {
   for(j in 1:attempts)
   {
     print("This is the step i am in now:")
-    print(i)
+    print(j)
   db_tag <- paste(c(db,'_id'),collapse="")
   records <- db.query(sprintf("SELECT %s FROM %s_data LIMIT %s OFFSET 6000", db_tag, db, n))
 
