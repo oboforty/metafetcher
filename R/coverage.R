@@ -69,8 +69,8 @@ sprintf("Missing attributes: %s (%s %%)", score_missing, round(score_missing/sco
 
   #writeLines(c("hi","hello"),fileConn)
   close(fileConn)
-
-   db.disconnect()
+  print("Hellooo sara")
+ db.disconnect()
 
 
 result=rbind(result,temp)
