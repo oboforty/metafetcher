@@ -77,6 +77,7 @@ temp=append(temp,as.numeric(round(score_missing/score_total*100)))
 
 
 result=rbind(result,temp)
+temp=NULL
 Sys.sleep(10)
   }
   db.disconnect()
