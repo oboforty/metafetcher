@@ -62,8 +62,8 @@ sprintf("Ambigous attributes: %s (%s %%)", score_unresolved, round(score_unresol
 sprintf("Missing attributes: %s (%s %%)", score_missing, round(score_missing/score_total*100))
  ),fileConn)
 
- temp=append(as.numeric(round(score_resolved/score_total*100)),as.numeric(round(score_unresolved/score_total*100)),as.numeric(round(score_missing/score_total*100)))
-
+ temp=append(as.numeric(round(score_resolved/score_total*100)),as.numeric(round(score_unresolved/score_total*100)))
+temp=append(temp,as.numeric(round(score_missing/score_total*100)))
   #print("hello i am in coverage test")
 
  #fileConn<-file("coverage.txt")
@@ -80,6 +80,8 @@ result=rbind(result,temp)
 Sys.sleep(10)
   }
   db.disconnect()
+  colnames(result)=c("Resolved attributes","Ambigous attributes","Missing attributes")
+  rownames(result)=NULL
 return(result)
   }
 
