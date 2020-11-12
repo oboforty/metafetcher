@@ -72,6 +72,7 @@ sprintf("Missing attributes: %s (%s %%)", score_missing, round(score_missing/sco
 
    db.disconnect()
 result=rbind(result,temp)
+Sys.sleep(10)
      }
 return(result)
   }
