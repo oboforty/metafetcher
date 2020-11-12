@@ -10,7 +10,11 @@ source('R/discover.R')
 attr_to_check <- names(db_handlers)
 
 
-do_consistency_test <- function (db, n) {
+do_consistency_test <- function (db, n,attempts) {
+  result=NULL
+  temp=NULL
+  for(j in 1:attempts)
+  {
   db_tag <- paste(c(db,'_id'),collapse="")
   records <- db.query(sprintf("SELECT %s FROM %s_data LIMIT %s OFFSET 6000", db_tag, db, n))
 
@@ -56,6 +60,9 @@ sprintf("Resolved attributes: %s (%s %%)", score_resolved, round(score_resolved/
 sprintf("Ambigous attributes: %s (%s %%)", score_unresolved, round(score_unresolved/score_total*100)),
 sprintf("Missing attributes: %s (%s %%)", score_missing, round(score_missing/score_total*100))
  ),fileConn)
+
+ temp=append(as.numeric(round(score_resolved/score_total*100)),as.numeric(round(score_unresolved/score_total*100)),as.numeric(round(score_missing/score_total*100)))
+
   #print("hello i am in coverage test")
 
  #fileConn<-file("coverage.txt")
@@ -64,7 +71,10 @@ sprintf("Missing attributes: %s (%s %%)", score_missing, round(score_missing/sco
   close(fileConn)
 
    db.disconnect()
-}
+result=rbind(result,temp)
+     }
+return(result)
+  }
 
 #do_consistency_test("chebi", 20)
 
