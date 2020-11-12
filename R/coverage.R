@@ -13,6 +13,7 @@ attr_to_check <- names(db_handlers)
 do_consistency_test <- function (db, n,attempts) {
   result=NULL
   temp=NULL
+  db.connect()
   for(j in 1:attempts)
   {
   db_tag <- paste(c(db,'_id'),collapse="")
@@ -23,7 +24,7 @@ do_consistency_test <- function (db, n,attempts) {
 
   i <- 0
   start_time <- Sys.time()
-  db.connect()
+
 
   score_missing <- 0
   score_resolved <- 0
@@ -70,12 +71,15 @@ sprintf("Missing attributes: %s (%s %%)", score_missing, round(score_missing/sco
   #writeLines(c("hi","hello"),fileConn)
   close(fileConn)
   print("Hellooo sara")
- db.disconnect()
+
+
+ pkg.globals$mydb_conn
 
 
 result=rbind(result,temp)
 Sys.sleep(10)
-     }
+  }
+  db.disconnect()
 return(result)
   }
 
