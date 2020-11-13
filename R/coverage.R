@@ -13,7 +13,7 @@ attr_to_check <- names(db_handlers)
 do_consistency_test <- function (db, n,attempts) {
   result=NULL
   temp=NULL
-  db.connect()
+  connection=db.connect()
   for(j in 1:attempts)
   {
     print("This is the step i am in now:")
@@ -82,7 +82,8 @@ result=rbind(result,temp)
 temp=NULL
 Sys.sleep(10)
   }
-  db.disconnect()
+ # db.disconnect()
+  dbDisconnect(connection)
   colnames(result)=c("Resolved attributes","Ambigous attributes","Missing attributes")
   rownames(result)=NULL
 return(result)
