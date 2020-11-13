@@ -75,15 +75,16 @@ temp=append(temp,as.numeric(round(score_missing/score_total*100)))
   print("Hellooo sara")
 
 
- pkg.globals$mydb_conn
+
 
 
 result=rbind(result,temp)
 temp=NULL
+dbDisconnect(connection)
 Sys.sleep(10)
   }
  # db.disconnect()
-  dbDisconnect(connection)
+
   colnames(result)=c("Resolved attributes","Ambigous attributes","Missing attributes")
   rownames(result)=NULL
 return(result)
