@@ -65,6 +65,7 @@ db.disconnect <- function () {
  # pkg.globals$localis_connected <- FALSE
 }
 
+
 db.transaction <- function () {
   dbBegin(pkg.globals$mydb_conn)
 }

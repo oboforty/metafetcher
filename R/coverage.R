@@ -3,6 +3,7 @@ source("R/utils.R")
 source('R/discover.R')
 
 
+
 # list of attributes to check the score for
 # attr_to_check <- c(names(db_handlers),
 #     "inchi", "inchikey", "smiles"
@@ -80,11 +81,13 @@ temp=append(temp,as.numeric(round(score_missing/score_total*100)))
 
 result=rbind(result,temp)
 temp=NULL
+print(connection)
+kill_db_connections(drv = RPostgreSQL::PostgreSQL())
 dbDisconnect(connection)
-Sys.sleep(10)
+#Sys.sleep(10)
   }
  # db.disconnect()
-
+  kill_db_connections(drv = RPostgreSQL::PostgreSQL())
   colnames(result)=c("Resolved attributes","Ambigous attributes","Missing attributes")
   rownames(result)=NULL
 return(result)
