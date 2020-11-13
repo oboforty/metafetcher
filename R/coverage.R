@@ -82,9 +82,9 @@ temp=append(temp,as.numeric(round(score_missing/score_total*100)))
 result=rbind(result,temp)
 temp=NULL
 print(connection)
-#kill_db_connections(drv = RPostgreSQL::PostgreSQL())
-#dbDisconnect(connection)
-#Sys.sleep(10)
+kill_db_connections(drv = RPostgreSQL::PostgreSQL())
+##dbDisconnect(connection)
+##Sys.sleep(10)
   }
  # db.disconnect()
   kill_db_connections(drv = RPostgreSQL::PostgreSQL())
