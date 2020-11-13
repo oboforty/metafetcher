@@ -11,7 +11,7 @@ source('R/discover.R')
 attr_to_check <- names(db_handlers)
 
 
-do_consistency_test <- function (db, n,attempts) {
+do_consistency_test <- function (db, n,attempts,offset) {
   result=NULL
   temp=NULL
   connection=db.connect()
@@ -20,7 +20,7 @@ do_consistency_test <- function (db, n,attempts) {
     print("This is the step i am in now:")
     print(j)
   db_tag <- paste(c(db,'_id'),collapse="")
-    records <- db.query(sprintf("SELECT %s FROM %s_data LIMIT %s OFFSET 60000", db_tag, db, n))
+    records <- db.query(sprintf("SELECT %s FROM %s_data LIMIT %s OFFSET %s", db_tag, db, n,offset))
 
   resolve.options$suppress <- TRUE
   resolve.options$open_connection <- FALSE
