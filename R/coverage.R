@@ -20,7 +20,8 @@ do_consistency_test <- function (db, n,attempts,offset) {
     print("This is the step i am in now:")
     print(j)
   db_tag <- paste(c(db,'_id'),collapse="")
-    records <- db.query(sprintf("SELECT %s FROM %s_data LIMIT %s OFFSET %s", db_tag, db, n,offset))
+
+    records <- db.query(sprintf("SELECT %s FROM %s_data LIMIT %s OFFSET %s", db_tag, db, n,as.integer(runif(1, min=10, max=offset))))
 
   resolve.options$suppress <- TRUE
   resolve.options$open_connection <- FALSE
