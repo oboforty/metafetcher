@@ -1,0 +1,126 @@
+---
+title: "MetafetcheR: An R package for complete mapping of small compounds data"
+output:
+    html_document:
+      css: style.css
+      fig_caption: yes
+      theme: cerulean
+      highlight: pygments
+      toc: true
+      toc_float:
+        collapsed: true
+      toc_depth: 3
+link-citations: yes
+---
+<center>
+![](MetafetcheR_logo3.png){width=30% }
+</center>
+
+***
+
+
+> MetafetcheR is an R package designed to link metabolites IDs from different Metabolome databases with eachother in a step to resolve ambiguity and standardize metabolites representation and annotation. Currently the package supports resolving IDs for the following databases:
+
+* Human Metabolome Database (HMDB)
+* Chemical Entities of Biological Interest (ChEBI)
+* PubChem
+* Kyoto Encyclopedia of Genes and Genomes (KEGG)
+* Lipidomics Gateway (LipidMaps)
+
+***
+# Installation
+
+
+1. Install postgressql database on your system and create a user,you can download the database from
+[here](https://www.postgresql.org/)
+2. Install devtools in R
+
+```{r,eval=FALSE}
+install.packages("devtools")
+```
+3. Install MetafetcheR package
+
+```{r ,message=FALSE, warning=FALSE,eval=FALSE}
+library(devtools)
+devtools::load_all()
+install_github("komorowskilab/metafetcher")
+```
+
+4. Download the database SQL dump files
+ + [HMDB](https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip)
+ + [ChEBI](ftp://ftp.ebi.ac.uk/pub/databases/chebi/SDF/ChEBI_complete.sdf.gz)
+ + [PubChem](https://www.lipidmaps.org/data/structure/download.php)
+ 
+5. Uncompress all downloaded files in a directory you create and name it tmp
+
+6. Create a new R project and install MetafetcheR package
+
+```{r ,message=FALSE, warning=FALSE,eval=FALSE}
+library(devtools)
+devtools::load_all()
+install_github("komorowskilab/metafetcher")
+library(metafetcher)
+```
+
+7.  call write_config with the 
+```{r ,message=FALSE, warning=FALSE,eval=FALSE}
+write_config(host,port,db_name,user,password,path_of_tmp_folder)
+```
+* host:"localhost" (this is the local host when you install postgres SQL)
+* port: 5432 (this is the local port when you install postgres SQL)
+* user: "postgres" (this is the local user that is created when you install postgresSQL)
+* password:  write the password that you want the data base to be created with
+* path_of_tmp_folder: path to tmp folder that contains the extracted downloaded files.
+
+8.call function install_database() for creating the tables and inserting the data from the tmp folder preferably put it in your R project directory
+
+```{r ,message=FALSE, warning=FALSE,eval=FALSE}
+install_database() 
+```
+***
+
+# Example
+
+Create a csv file with input IDs in the following format
+
+```{r ,message=FALSE, warning=FALSE,echo=FALSE,results='asis'}
+library(knitr)
+discovery=read.csv("discovery.csv")
+kable(discovery,caption="example input table")
+
+```
+
+```{r ,message=FALSE, warning=FALSE,echo=T, results='hide'}
+library(metafetcher)
+df.res <- read.csv("discovery.csv", stringsAsFactors=FALSE)
+resp <- resolve_metabolites(df.res)
+print(resp$df)
+
+```
+```{r ,message=FALSE, warning=FALSE,echo=FALSE,results ='asis'}
+df.out <- resp$df
+kable(df.out ,caption="output table")
+```
+To map only a single ID you can use function resolve_single_id
+
+```{r ,message=FALSE, warning=FALSE,echo=T,results ='hide'}
+library(metafetcher)
+resp1 <- resolve_single_id('hmdb_id', 'HMDB0001005')
+
+df.out1 <- resp1$df
+print(df.out1)
+
+```
+
+```{r ,message=FALSE, warning=FALSE,echo=FALSE,results ='asis'}
+
+kable(df.out1 ,caption="output table")
+
+```
+***
+# Citation
+
+
+https://github.com/komorowskilab/metafetcher
+
+***
