@@ -1,6 +1,6 @@
 # MetafetcheR
 
-<img src="MetafetcheR Vignette/VIsuNet_logo2.png" width=200; align="middle">
+<img src="docs/MetafetcheR_logo3.png" width=200; align="middle">
 
 An R package designed to link metabolites' IDs from different Metabolome databases with eachother in a step to resolve ambiguity and standardize metabolites representation and annotation.
 Currently the package supports resolving IDs for the following databases:
