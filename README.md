@@ -1,4 +1,4 @@
-# MetaFetcheR
+# MetafetcheR
 
 <img src="MetafetcheR Vignette/VIsuNet_logo2.png" width=200; align="middle">
 
