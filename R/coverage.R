@@ -3,6 +3,7 @@ source("R/utils.R")
 source('R/discover.R')
 
 
+
 # list of attributes to check the score for
 # attr_to_check <- c(names(db_handlers),
 #     "inchi", "inchikey", "smiles"
@@ -10,16 +11,24 @@ source('R/discover.R')
 attr_to_check <- names(db_handlers)
 
 
-do_consistency_test <- function (db, n) {
+do_consistency_test <- function (db, n,attempts,offset) {
+  result=NULL
+  temp=NULL
+  connection=db.connect()
+  for(j in 1:attempts)
+  {
+    print("This is the step i am in now:")
+    print(j)
   db_tag <- paste(c(db,'_id'),collapse="")
-  records <- db.query(sprintf("SELECT %s FROM %s_data LIMIT %s OFFSET 6000", db_tag, db, n))
+
+    records <- db.query(sprintf("SELECT %s FROM %s_data LIMIT %s OFFSET %s", db_tag, db, n,as.integer(runif(1, min=10, max=offset))))
 
   resolve.options$suppress <- TRUE
   resolve.options$open_connection <- FALSE
 
   i <- 0
   start_time <- Sys.time()
-  db.connect()
+
 
   score_missing <- 0
   score_resolved <- 0
@@ -56,15 +65,34 @@ sprintf("Resolved attributes: %s (%s %%)", score_resolved, round(score_resolved/
 sprintf("Ambigous attributes: %s (%s %%)", score_unresolved, round(score_unresolved/score_total*100)),
 sprintf("Missing attributes: %s (%s %%)", score_missing, round(score_missing/score_total*100))
  ),fileConn)
+
+ temp=append(as.numeric(round(score_resolved/score_total*100)),as.numeric(round(score_unresolved/score_total*100)))
+temp=append(temp,as.numeric(round(score_missing/score_total*100)))
   #print("hello i am in coverage test")
 
  #fileConn<-file("coverage.txt")
 
   #writeLines(c("hi","hello"),fileConn)
   close(fileConn)
+  print("Hellooo sara")
 
-   db.disconnect()
-}
+
+
+
+
+result=rbind(result,temp)
+temp=NULL
+print(connection)
+kill_db_connections(drv = RPostgreSQL::PostgreSQL())
+##dbDisconnect(connection)
+##Sys.sleep(10)
+  }
+ # db.disconnect()
+  kill_db_connections(drv = RPostgreSQL::PostgreSQL())
+  colnames(result)=c("Resolved attributes","Ambigous attributes","Missing attributes")
+  rownames(result)=NULL
+return(result)
+  }
 
 #do_consistency_test("chebi", 20)
 

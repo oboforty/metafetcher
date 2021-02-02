@@ -58,10 +58,13 @@ print(SQL)
 }
 
 db.disconnect <- function () {
+  print("disconnectedStarted")
   dbDisconnect(pkg.globals$mydb_conn)
+  print("disconnectedDone")
   assign("localis_connected",FALSE,envir = pkg.globals)
  # pkg.globals$localis_connected <- FALSE
 }
+
 
 db.transaction <- function () {
   dbBegin(pkg.globals$mydb_conn)

@@ -153,3 +153,16 @@ id_to_url <- function (db_id, db_tag = NULL) {
 
   return(sprintf(url, db_id))
 }
+list_to_text <- function(column, sep = "-"){
+  loadNamespace("stringr")
+  ret <- sapply(column, function(x) {
+    ret <- stringr::str_c(x, collapse = sep)
+    if(identical(ret, character(0))){
+      # if it's character(0)
+      NA
+    } else {
+      ret
+    }
+  })
+  as.character(ret)
+}
