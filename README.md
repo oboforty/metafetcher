@@ -1,4 +1,4 @@
-# MetafetcheR
+# MetaFetcheR
 
 <img src="docs/MetafetcheR_logo3.png" width=200; align="middle">
 
@@ -15,7 +15,7 @@ Currently the package supports resolving IDs for the following databases:
  For any questions or issues please use the Issues in github or contact Rajmund Casombordi or Sara Younes.
  
  
-MetafetcheR is implemented in R 
+MetaFetcheR is implemented in R 
 ***
 ##  Installation
 
