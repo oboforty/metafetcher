@@ -1,5 +1,5 @@
 ---
-title: "MetafetcheR: An R package for complete mapping of small compounds data"
+title: "MetaFetcheR: An R package for complete mapping of small compounds data"
 output:
     html_document:
       css: style.css
@@ -19,7 +19,7 @@ link-citations: yes
 ***
 
 
-> MetafetcheR is an R package designed to link metabolites IDs from different Metabolome databases with eachother in a step to resolve ambiguity and standardize metabolites representation and annotation. Currently the package supports resolving IDs for the following databases:
+> MetaFetcheR is an R package designed to link metabolites IDs from different Metabolome databases with eachother in a step to resolve ambiguity and standardize metabolites representation and annotation. Currently the package supports resolving IDs for the following databases:
 
 * Human Metabolome Database (HMDB)
 * Chemical Entities of Biological Interest (ChEBI)
