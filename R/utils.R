@@ -153,7 +153,7 @@ id_to_url <- function (db_id, db_tag = NULL) {
 
   return(sprintf(url, db_id))
 }
-list_to_text <- function(column, sep = "-"){
+list_to_text <- function(column, sep = ", "){
   loadNamespace("stringr")
   ret <- sapply(column, function(x) {
     ret <- stringr::str_c(x, collapse = sep)
