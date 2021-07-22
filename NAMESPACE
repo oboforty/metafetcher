@@ -1,7 +1,6 @@
 import(Rcpp)
 import(httr)
 import(RPostgreSQL)
-#import(hfun)
 #import(stringi)
 importFrom(stringr, str_detect)
 importFrom(stringr, str_match_all)
