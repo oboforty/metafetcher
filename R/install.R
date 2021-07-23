@@ -184,6 +184,6 @@ write_config=function(host,port,db_name,user,password,path)
   #-----here-----
 
 
- assign("localis_connected",localis_connected,envir = pkg.globals)
+# assign("localis_connected",localis_connected,envir = pkg.globals)
 devtools::load_all()
 }
