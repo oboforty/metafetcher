@@ -143,21 +143,21 @@ install_databases <- function () {
 # install_databases()
 write_config=function(host,port,db_name,user,password,path)
 {
-  #fileConn<-file("config1.R")
-  # cat("dbconf <- list(","\n",
-  #     "host =","\"",host,"\"",",","\n",
-  #     "dbname =","\"",db_name,"\"",",","\n",
-  #     "user =","\"",user,"\"",",","\n",
-  #     "password =","\"",password,"\"","\n",
-  #     ")","\n",
-  #     "fileconf <- list(","\n",
-  #     "hmdb_dump_file=","\"",path,"hmdb_metabolites.xml","\"",",","\n",
-  #     "chebi_dump_file=","\"",path,"chebi_dump_file.xml","\"",",","\n",
-  #     "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
-  #     ")","\n",file=fileConn,sep="")
-  # close(fileConn)
-  #readLines(fileConn, n = -1)
-  #close(fileConn)
+  fileConn<-file("config.YML")
+  cat("dbconf <- list(","\n",
+      "host =","\"",host,"\"",",","\n",
+      "dbname =","\"",db_name,"\"",",","\n",
+      "user =","\"",user,"\"",",","\n",
+      "password =","\"",password,"\"","\n",
+      ")","\n",
+      "fileconf <- list(","\n",
+      "hmdb_dump_file=","\"",path,"hmdb_metabolites.xml","\"",",","\n",
+      "chebi_dump_file=","\"",path,"chebi_dump_file.xml","\"",",","\n",
+      "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
+      ")","\n",file=fileConn,sep="")
+  close(fileConn)
+  readLines(fileConn, n = -1)
+  close(fileConn)
   fileConn<-file("config.YML")
   config <- config::get()
   config$trials
