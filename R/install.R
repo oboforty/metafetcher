@@ -9,6 +9,7 @@ install_databases <- function () {
   dbconf=NULL
   fileconf=NULL
 
+
   dbconf$host <- config::get("host")
   dbconf$port<-as.numeric(config::get("port"))
   dbconf$dbname<-config::get("dbname")
@@ -143,7 +144,7 @@ install_databases <- function () {
 # install_databases()
 write_config=function(host,port,db_name,user,password,path)
 {
-  fileConn<-file("config.YML")
+  fileConn<-file("config.yml")
   cat("dbconf <- list(","\n",
       "host =","\"",host,"\"",",","\n",
       "dbname =","\"",db_name,"\"",",","\n",
@@ -156,29 +157,29 @@ write_config=function(host,port,db_name,user,password,path)
       "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
       ")","\n",file=fileConn,sep="")
   close(fileConn)
-  readLines(fileConn, n = -1)
-  close(fileConn)
-  fileConn<-file("config.YML")
-  config <- config::get()
-  config$trials
-  config$dataset
+  # readLines(fileConn, n = -1)
+  # close(fileConn)
+  # fileConn<-file("config.YML")
+  # config <- config::get()
+  #  config$trials
+  # config$dataset
 
 
 
- unlockBinding(sym="dbconf",env=pkg.globals)
-  unlockBinding(sym="fileconf",env=pkg.globals)
-  print("Heyyy1")
+ # unlockBinding(sym="dbconf",env=pkg.globals)
+ #  unlockBinding(sym="fileconf",env=pkg.globals)
+ #  print("Heyyy1")
 
   #-----
-   dbconf$host<-host
-  dbconf$dbname<-db_name
-
-  dbconf$port<-port
-  dbconf$user<-user
-  dbconf$password<-password
-  dbconf$path<-path
+  #  dbconf$host<-host
+  # dbconf$dbname<-db_name
   #
-   assign("dbconf",dbconf,envir = pkg.globals)
+  # dbconf$port<-port
+  # dbconf$user<-user
+  # dbconf$password<-password
+  # dbconf$path<-path
+  # #
+  #  assign("dbconf",dbconf,envir = pkg.globals)
 
   #-----here-----
 
