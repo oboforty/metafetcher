@@ -158,14 +158,15 @@ write_config=function(host,port,db_name,user,password,path)
   #     ")","\n",file=fileConn,sep="")
 
   fileConn<-file("config.yml")
-  cat("default:","\n",
-      "host:","\"",host,"\"","\n",
-      "dbname:","\"",db_name,"\"","\n",
-      "user:","\"",user,"\"","\n",
-      "password:","\"",password,"\"","\n",
-      "hmdb_dump_file:","\"",path,"hmdb_metabolites.xml","\"","\n",
-      "chebi_dump_file:","\"",path,"chebi_dump_file.xml","\"","\n",
-      "lipidmaps_dump_file:","\"",path,"structures.sdf","\"","\n",file=fileConn,sep="")
+  cat("default:","\"","\n",
+      "\t","host:","\"","\"",host,"\"","\n",
+      "\t","port:","\"","\"",port,"\"","\n",
+      "\t", "dbname:","\"","\"",db_name,"\"","\n",
+      "\t","user:","\"","\"",user,"\"","\n",
+      "\t","password:","\"","\"",password,"\"","\n",
+      "\t","hmdb_dump_file:","\"","\"",path,"hmdb_metabolites.xml","\"","\n",
+      "\t","chebi_dump_file:","\"","\"",path,"chebi_dump_file.xml","\"","\n",
+      "\t","lipidmaps_dump_file:","\"","\"",path,"structures.sdf","\"","\n",file=fileConn,sep="")
 
 
 
