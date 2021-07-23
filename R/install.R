@@ -164,9 +164,9 @@ write_config=function(host,port,db_name,user,password,path)
       "  ", "dbname: ","\"",db_name,"\"","\n",
       "  ","user: ","\"",user,"\"","\n",
       "  ","password: ","\"",password,"\"","\n",
-      "  ","hmdb_dump_file: ","\"",path,"hmdb_metabolites.xml","\"","\n",
-      "  ","chebi_dump_file: ","\"",path,"ChEBI_complete","\"","\n",
-      "  ","lipidmaps_dump_file: ","\"",path,"structures.sdf","\"","\n",file=fileConn,sep="")
+      "  ","hmdbDumpFile: ","\"",path,"hmdb_metabolites.xml","\"","\n",
+      "  ","chebiDumpFile: ","\"",path,"ChEBI_complete","\"","\n",
+      "  ","lipidmapsDumpFile: ","\"",path,"structures.sdf","\"","\n",file=fileConn,sep="")
 
 
 
