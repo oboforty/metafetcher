@@ -154,7 +154,7 @@ write_config=function(host,port,db_name,user,password,path)
       "fileconf <- list(","\n",
       "hmdb_dump_file=","\"",path,"hmdb_metabolites.xml","\"",",","\n",
       "chebi_dump_file=","\"",path,"chebi_dump_file.xml","\"",",","\n",
-      "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
+      "lipidmaps_dump_file=","\"",path,"structures.sdf","\"","\n",
       ")","\n",file=fileConn,sep="")
   close(fileConn)
   # readLines(fileConn, n = -1)
@@ -185,5 +185,5 @@ write_config=function(host,port,db_name,user,password,path)
 
 
 # assign("localis_connected",localis_connected,envir = pkg.globals)
-devtools::load_all()
+#devtools::load_all()
 }
