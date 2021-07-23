@@ -140,49 +140,49 @@ install_databases <- function () {
   }
 }
 
-#install_databases()
-# write_config=function(host,port,db_name,user,password,path)
-# {
-#   #fileConn<-file("config1.R")
-#   # cat("dbconf <- list(","\n",
-#   #     "host =","\"",host,"\"",",","\n",
-#   #     "dbname =","\"",db_name,"\"",",","\n",
-#   #     "user =","\"",user,"\"",",","\n",
-#   #     "password =","\"",password,"\"","\n",
-#   #     ")","\n",
-#   #     "fileconf <- list(","\n",
-#   #     "hmdb_dump_file=","\"",path,"hmdb_metabolites.xml","\"",",","\n",
-#   #     "chebi_dump_file=","\"",path,"chebi_dump_file.xml","\"",",","\n",
-#   #     "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
-#   #     ")","\n",file=fileConn,sep="")
-#   # close(fileConn)
-#   #readLines(fileConn, n = -1)
-#   #close(fileConn)
-#   fileConn<-file("config.YML")
-#   config <- config::get()
-#   config$trials
-#   config$dataset
-#
-#
-#
-#  # unlockBinding(sym="dbconf",env=pkg.globals)
-#   #unlockBinding(sym="fileconf",env=pkg.globals)
-#   #print("Heyyy1")
-#
-#   #-----
-#   # dbconf$host<-host
-#   # dbconf$dbname<-db_name
-#   #
-#   # dbconf$port<-port
-#   # dbconf$user<-user
-#   # dbconf$password<-password
-#   # dbconf$path<-path
-#   #
-#   # assign("dbconf",dbconf,envir = pkg.globals)
-#
-#   #-----here-----
-#
-#
-#  # assign("localis_connected",localis_connected,envir = pkg.globals)
-# #devtools::load_all()
-# }
+# install_databases()
+write_config=function(host,port,db_name,user,password,path)
+{
+  #fileConn<-file("config1.R")
+  # cat("dbconf <- list(","\n",
+  #     "host =","\"",host,"\"",",","\n",
+  #     "dbname =","\"",db_name,"\"",",","\n",
+  #     "user =","\"",user,"\"",",","\n",
+  #     "password =","\"",password,"\"","\n",
+  #     ")","\n",
+  #     "fileconf <- list(","\n",
+  #     "hmdb_dump_file=","\"",path,"hmdb_metabolites.xml","\"",",","\n",
+  #     "chebi_dump_file=","\"",path,"chebi_dump_file.xml","\"",",","\n",
+  #     "lipidmaps_dump_file=","\"",path,"LMSD_20191002.sdf","\"","\n",
+  #     ")","\n",file=fileConn,sep="")
+  # close(fileConn)
+  #readLines(fileConn, n = -1)
+  #close(fileConn)
+  fileConn<-file("config.YML")
+  config <- config::get()
+  config$trials
+  config$dataset
+
+
+
+ unlockBinding(sym="dbconf",env=pkg.globals)
+  unlockBinding(sym="fileconf",env=pkg.globals)
+  print("Heyyy1")
+
+  #-----
+   dbconf$host<-host
+  dbconf$dbname<-db_name
+
+  dbconf$port<-port
+  dbconf$user<-user
+  dbconf$password<-password
+  dbconf$path<-path
+  #
+   assign("dbconf",dbconf,envir = pkg.globals)
+
+  #-----here-----
+
+
+ assign("localis_connected",localis_connected,envir = pkg.globals)
+devtools::load_all()
+}
