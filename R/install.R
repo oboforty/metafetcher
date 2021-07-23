@@ -158,7 +158,7 @@ write_config=function(host,port,db_name,user,password,path)
   #     ")","\n",file=fileConn,sep="")
 
   fileConn<-file("config.yml")
-  cat("default:","\"","\n",
+  cat("default:","\n",
       "  ","host: ","\"",host,"\"","\n",
       "  ","port: ",port,"\n",
       "  ", "dbname: ","\"",db_name,"\"","\n",
