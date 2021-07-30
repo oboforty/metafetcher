@@ -49,30 +49,34 @@ install_github("komorowskilab/metafetcher")
 4. Download the database SQL dump files
  + [HMDB](https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip)
  + [ChEBI](ftp://ftp.ebi.ac.uk/pub/databases/chebi/SDF/ChEBI_complete.sdf.gz)
- + [PubChem](https://www.lipidmaps.org/data/structure/download.php)
+ + [LIPID MAPS](https://www.lipidmaps.org/data/structure/download.php)
  
-5. Uncompress all downloaded files in a directory you create and name it tmp
+5. Uncompress all downloaded files in a directory you create
 
 6. Create a new R project and install MetafetcheR package
 
 ```{r ,message=FALSE, warning=FALSE,eval=FALSE}
 library(devtools)
-devtools::load_all()
 install_github("komorowskilab/metafetcher")
 library(metafetcher)
 ```
 
-7.  call write_config with the 
+7.  call write_config which is a function that sets the setting to connect to the postgres and automatically creates a database called metafetcher 
 ```{r ,message=FALSE, warning=FALSE,eval=FALSE}
-write_config(host,port,db_name,user,password,path_of_tmp_folder)
+write_config(host,port,db_name,user,password,path_of_tmp_folder,HMDB_file_name,ChEBI_file_name,LIPIDMAPS_file_name)
 ```
 * host:"localhost" (this is the local host when you install postgres SQL)
 * port: 5432 (this is the local port when you install postgres SQL)
 * user: "postgres" (this is the local user that is created when you install postgresSQL)
 * password:  write the password that you want the data base to be created with
-* path_of_tmp_folder: path to tmp folder that contains the extracted downloaded files.
+* path_of_tmp_folder: path to  folder that contains the extracted downloaded files.
+* HMDB_file_name: name of the SQL dump file downloaded from HMDB repository
+* ChEBI_file_name: name of the SQL dump file downloaded from ChEBI repository
+* LIPIDMAPS_file_name:name of the SQL dump file downloaded from LIPID MAPS repository
 
-8.call function install_database() for creating the tables and inserting the data from the tmp folder preferably put it in your R project directory
+8.call function install_database() for creating the tables and inserting the data from the SQL dump files. Preferably put the folder that has the SQL dump in your R project directory
+
+The install_database() function is only called once to create the MetaFetcheR database, the tables and insert all data from the SQL dump there. This process may take a while (Approximately between 45 mintues to 1 hour)
 
 ```{r ,message=FALSE, warning=FALSE,eval=FALSE}
 install_database() 
@@ -120,7 +124,6 @@ kable(df.out1 ,caption="output table")
 ***
 # Citation
 
-
-https://github.com/komorowskilab/metafetcher
+Yones SA, Csombordi R, Komorowski J, and Diamanti K. MetaFetcheR: An R package for complete mapping of small compound data, bioRxiv, March 2021.
 
 ***
