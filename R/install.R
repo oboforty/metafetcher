@@ -142,7 +142,7 @@ install_databases <- function () {
 }
 
 # install_databases()
-write_config=function(host,port,db_name,user,password,path)
+write_config=function(host,port,db_name,user,password,path,HMDB_file_name,ChEBI_file_name,LIPIDMAPS_file_name)
 {
   # fileConn<-file("config.yml")
   # cat("dbconf <- list(","\n",
@@ -164,9 +164,9 @@ write_config=function(host,port,db_name,user,password,path)
       "  ", "dbname: ","\"",db_name,"\"","\n",
       "  ","user: ","\"",user,"\"","\n",
       "  ","password: ","\"",password,"\"","\n",
-      "  ","hmdbDumpFile: ","\"",path,"hmdb_metabolites.xml","\"","\n",
-      "  ","chebiDumpFile: ","\"",path,"ChEBI_complete","\"","\n",
-      "  ","lipidmapsDumpFile: ","\"",path,"structures.sdf","\"","\n",file=fileConn,sep="")
+      "  ","hmdbDumpFile: ","\"",path,HMDB_file_name,"\"","\n",
+      "  ","chebiDumpFile: ","\"",path,ChEBI_file_name,"\"","\n",
+      "  ","lipidmapsDumpFile: ","\"",path,LIPIDMAPS_file_name,"\"","\n",file=fileConn,sep="")
 
 
 
