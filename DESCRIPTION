@@ -13,7 +13,7 @@ Description: Integration of metabolites data and sorting the interpredencies of 
   2-KEGG
   3-Lipidmaps
   4-Chebi
-Depends: R (>= 3.5.0),stringr
+Depends: R (>= 3.5.0),stringr,httr,RPostgreSQL,hfun,sets,XML,DBI,config,iterators,RPostgres
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
