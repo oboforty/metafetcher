@@ -20,7 +20,8 @@ MetaFetcheR is implemented in R
 ##  Installation
 
  ```R
-devtools::install_github("komorowskilab/metafetcher")
+library(devtools)
+install_github("shizidushu/hfun","komorowskilab/metafetcher")
 ```
 
 *** 
