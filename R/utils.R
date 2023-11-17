@@ -10,6 +10,7 @@ null2na <- function(v) {
 
 is.empty <- function(v) {
   # + is.null(v)
+ print(v)
   return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
 }
 
