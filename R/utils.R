@@ -17,16 +17,16 @@ is.empty <- function(v) {
   z=FALSE
   j=FALSE
   final=FALSE
-  if(identical(length(v) , 0))
+  if(length(v)==0)
   { x=TRUE;
     print("I am here")
    v=0}
 
   if(is.na(v))
    y=TRUE
- if(identical(v,""))
+ if(v=="")
   z=TRUE
-  if(identical(v ,"\n"))
+  if(v=="\n")
    j=TRUE
  final=x||y||z||j
    
