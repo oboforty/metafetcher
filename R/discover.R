@@ -270,7 +270,7 @@ find_by_secondary_id <- function(db_tag, db_id) {
     WHERE db_tag = '%s' AND secondary_id = '%s'"
   df.second <- db.query(sprintf(SQL2, db_tag, db_id))
 
-  if (length(df.second) > 0 && !is.empty(df.second$primary_id[[1]])) {
+  if (dim(df.second)[1] > 0 && !is.empty(df.second$primary_id[[1]])) {
     db_id1 <- df.second$primary_id[[1]]
     if (!resolve.options$suppress)
       print(sprintf("Resolved secondary %s id: %s > %s", db_tag, db_id, db_id1))
