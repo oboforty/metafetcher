@@ -19,7 +19,7 @@ is.empty <- function(v) {
   final=FALSE
   if(length(v)==0)
   { x=TRUE;
-    print("I am here")
+   # print("I am here")
    v=0}
 
  # if(is.na(v))
