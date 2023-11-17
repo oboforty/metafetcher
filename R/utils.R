@@ -12,24 +12,24 @@ is.empty <- function(v) {
   # + is.null(v)
  print(v)
   print(length(v))
-  if(length(v)!=0)
-    return (FALSE)
-   else
-      return (TRUE)
- if(!is.na(v))
-    return (FALSE)
-  else
-      return (TRUE)
- if(v!="")
-       return (FALSE)
-  else
-      return (TRUE)
-  if(v != "\n")
-    return (FALSE)
-  else
-      return (TRUE)
+ # if(length(v)!=0)
+  #  return (FALSE)
+   #else
+    #  return (TRUE)
+ #if(!is.na(v))
+  #  return (FALSE)
+  #else
+   #   return (TRUE)
+ #if(v!="")
+  #     return (FALSE)
+  #else
+   #   return (TRUE)
+  #if(v != "\n")
+   # return (FALSE)
+ # else
+  #    return (TRUE)
    
-#  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
+  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
 }
 
 lstrip <- function(sr, sub) {
