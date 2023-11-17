@@ -18,7 +18,9 @@ is.empty <- function(v) {
   j=FALSE
   final=FALSE
   if(identical(length(v) , 0))
-   x=TRUE
+  { x=TRUE
+   v=0}
+
   if(is.na(v))
    y=TRUE
  if(identical(v,""))
