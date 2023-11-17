@@ -11,16 +11,16 @@ null2na <- function(v) {
 is.empty <- function(v) {
   # + is.null(v)
  print(v)
-  if(length(v)==0)
-    return (TRUE)
-  else if(is.na(v))
-    return (TRUE)
-  else if(v=="")
-       return (TRUE)
-  else if(v == "\n")
-    return (TRUE)
+  if(length(v)!=0)
+    return (FALSE)
+  else if(!is.na(v))
+    return (FALSE)
+  else if(v!="")
+       return (FALSE)
+  else if(v != "\n")
+    return (FALSE)
     else
-      return (FALSE)
+      return (TRUE)
 #  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
 }
 
