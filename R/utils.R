@@ -14,14 +14,21 @@ is.empty <- function(v) {
   print(length(v))
   if(length(v)!=0)
     return (FALSE)
-  else if(!is.na(v))
-    return (FALSE)
-  else if(v!="")
-       return (FALSE)
-  else if(v != "\n")
-    return (FALSE)
-    else
+   else
       return (TRUE)
+ if(!is.na(v))
+    return (FALSE)
+  else
+      return (TRUE)
+ if(v!="")
+       return (FALSE)
+  else
+      return (TRUE)
+  if(v != "\n")
+    return (FALSE)
+  else
+      return (TRUE)
+   
 #  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
 }
 
