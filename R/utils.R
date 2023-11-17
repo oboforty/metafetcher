@@ -11,6 +11,7 @@ null2na <- function(v) {
 is.empty <- function(v) {
   # + is.null(v)
  print(v)
+  print(length(v))
   if(length(v)!=0)
     return (FALSE)
   else if(!is.na(v))
