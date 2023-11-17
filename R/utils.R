@@ -18,7 +18,8 @@ is.empty <- function(v) {
   j=FALSE
   final=FALSE
   if(identical(length(v) , 0))
-  { x=TRUE
+  { x=TRUE;
+    print("I am here")
    v=0}
 
   if(is.na(v))
