@@ -12,15 +12,15 @@ is.empty <- function(v) {
   # + is.null(v)
  print(v)
   if(length(v)==0)
-    return TRUE
+    return (TRUE)
   else if(is.na(v))
-    return TRUE
-  else if(v==""))
-       return TRUE
+    return (TRUE)
+  else if(v=="")
+       return (TRUE)
   else if(v == "\n")
-    return TRUE
+    return (TRUE)
     else
-      return FALSE
+      return (FALSE)
 #  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
 }
 
