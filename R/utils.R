@@ -23,7 +23,10 @@ is.empty <- function(v) {
    v=0}
 
   if(is.na(v))
-   y=TRUE
+  {
+    y=TRUE
+    v="hey"
+}
  if(v=="")
   z=TRUE
   if(v=="\n")
