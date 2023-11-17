@@ -11,7 +11,17 @@ null2na <- function(v) {
 is.empty <- function(v) {
   # + is.null(v)
  print(v)
-  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
+  if(length(v)==0)
+    return TRUE
+  else if(is.na(v))
+    return TRUE
+  else if(v==""))
+       return TRUE
+  else if(v == "\n")
+    return TRUE
+    else
+      return FALSE
+#  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
 }
 
 lstrip <- function(sr, sub) {
