@@ -29,7 +29,7 @@ is.empty <- function(v) {
  # else
   #    return (TRUE)
    
-  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
+#  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
 return(identical(length(v) , 0)||is.na(v)|| identical(v,"")|| identical(v ,"\n"))
 }
 
