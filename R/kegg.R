@@ -50,11 +50,11 @@ KeggHandler <- setRefClass(Class = "KeggHandler",
         FROM kegg_data WHERE kegg_id = '%s'"
       df.kegg <- db.query(sprintf(SQL, db_id))
 
-      if(length(df.kegg) == 0) {
+      if(dim(df.kegg)[1] == 0) {
         df.kegg <- .self$call_api(db_id)
 
         # if api response is still empty, then the record doesn't exist
-        if(is.null(df.kegg) || length(df.kegg) == 0)
+        if(is.null(df.kegg) || dim(df.kegg)[1]== 0)
           return(NULL)
 
         # cache kegg record

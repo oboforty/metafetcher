@@ -23,7 +23,7 @@ ChebiHandler <- setRefClass(Class = "ChebiHandler",
       SQL <- "SELECT %s FROM chebi_data WHERE chebi_id = '%s'"
       df.chebi <- db.query(sprintf(SQL, .self$sql_select, db_id))
 
-      if(length(df.chebi) == 0) {
+      if(dim(df.chebi)[1] == 0) {
         return(NULL)
       }
 

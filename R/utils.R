@@ -10,7 +10,41 @@ null2na <- function(v) {
 
 is.empty <- function(v) {
   # + is.null(v)
-  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
+ print(v)
+  print(length(v))
+  x=FALSE
+  y=FALSE
+  z=FALSE
+  j=FALSE
+  final=FALSE
+  if(length(v)==0)
+  { x=TRUE;
+   # print("I am here")
+   v=0}
+
+ # if(is.na(v))
+if(length(v)<=1)
+  {
+  if(is.na(v))
+ {y=TRUE
+ v="hey"}else{
+    y=FALSE}
+  
+#  {
+ #   y=TRUE
+  #  v="hey"
+#}
+ if(v=="")
+  z=TRUE
+  if(v=="\n")
+   j=TRUE
+  }
+ final=x||y||z||j
+   
+#  return(length(v) == 0 || is.na(v) || v == "" || v == "\n")
+ # print(identical(length(v) , 0)||is.na(v)|| identical(v,"")|| identical(v ,"\n"))
+#return(identical(length(v) , 0)||is.na(v)|| identical(v,"")|| identical(v ,"\n"))
+  return(final)
 }
 
 lstrip <- function(sr, sub) {
