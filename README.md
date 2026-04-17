@@ -1,3 +1,12 @@
+# Deprecation warning
+
+This package no longer is maintained and currently the CRAN version fails due to outdated dependencies.
+
+Please check out the Python version instead, which is also much more efficient and solves several bugs:
+
+https://github.com/oboforty/MetaFetcher-python
+
+
 # MetaFetcheR
 
 An R package designed to link metabolites' IDs from different Metabolome databases with eachother in a step to resolve ambiguity and standardize metabolites representation and annotation.
