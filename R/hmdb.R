@@ -27,7 +27,7 @@ HmdbHandler <- setRefClass(Class = "HmdbHandler",
         FROM hmdb_data WHERE hmdb_id = '%s'"
       df.hmdb <- db.query(sprintf(SQL, db_id))
 
-      if(length(df.hmdb) == 0) {
+      if(dim(df.hmdb)[1] == 0) {
         return(NULL)
       }
 

@@ -56,7 +56,7 @@ LipidmapsHandler <- setRefClass(Class = "LipidmapsHandler",
       SQL <- paste(SQL, paste(clauses, collapse = " OR "))
       df.lipidmaps <- db.query(SQL)
 
-      if(length(df.lipidmaps) == 0) {
+      if(dim(df.lipidmaps)[1]== 0) {
         return(NULL)
       }
 

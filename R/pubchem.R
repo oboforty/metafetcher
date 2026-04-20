@@ -44,12 +44,12 @@ PubchemHandler <- setRefClass(Class = "PubchemHandler",
         FROM pubchem_data WHERE pubchem_id = '%s'"
       df.pubchem <- db.query(sprintf(SQL, db_id))
 
-      if (length(df.pubchem) == 0) {
+      if (dim(df.pubchem)[1] == 0) {
         # call api and save to database
         df.pubchem <- .self$call_api(db_id)
 
         # if api response is still empty, then the record doesn't exist
-        if (is.null(df.pubchem) || length(df.pubchem) == 0)
+        if (is.null(df.pubchem) || dim(df.pubchem)[1] == 0)
           return(NULL)
         #
         # # Save to db
